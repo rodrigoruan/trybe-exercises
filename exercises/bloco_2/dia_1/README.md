@@ -1,1 +1,3 @@
-Neste bloco estamos aprendendo GIT, criando repositórios via terminal e os colocando no GitHub.
+# BLOCO GIT
+
+Neste bloco estamos aprendendo os principais conceitos e comandos do GIT para nos familizarizamos com a ferramente, além de fazer também alguns exercícios para fixação do conteúdo.
