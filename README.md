@@ -2,9 +2,9 @@
 
 Este reposiório contém todas as atividades de aprendizagem desenvolvidas por mim enquanto estudava na [Trybe](https://www.betrybe.com/) :rocket:
 
-## Fundamentos doDesenvolvimento Web :white_check_mark:
+## Fundamentos do Desenvolvimento Web :white_check_mark:
 
-##### Bloco 1: IntroduÃ§Ã£o - Unix & Shell
+##### Bloco 1: Introdução - Unix & Shell
 
 - [ ] 1-3: _Unix & Bash - Part 1_
 - [ ] 1-4: _Unix & Bash - Part 2_
@@ -16,7 +16,7 @@ Este reposiório contém todas as atividades de aprendizagem desenvolvidas por m
 - [ ] 2-2: _Entendendo os comandos_
 - [ ] 2-3: _Internet - Entendendo como ela funciona_
 
-##### Bloco 3: IntroduÃ§Ã£o - HTML & CSS
+##### Bloco 3: Introdução - HTML & CSS
 
 - [ ] 3-1: _HTML & CSS - Estruturas de pÃ¡gina_
 - [ ] 3-2: _HTML & CSS - Primeiros passos em CSS_
