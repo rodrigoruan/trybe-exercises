@@ -1,4 +1,4 @@
-let num = 5;
+let num = 10;
 let piramyd = []; //variavel para guardar os valores dos asteriscos
 let spaces = []; //variavel para guardar os espaços ' '
 
