@@ -1,0 +1,55 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .nav {
+    display: flex;
+    text-align: center;
+    list-style-type: none;
+    justify-content: center;
+  }
+  .nav li {
+    padding-right: 50px;
+  }
+  aside h2 {
+    text-align: left;
+    padding-left: 36px;
+    font-size: 23px;
+  }
+  aside ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  aside li {
+    padding: 1px;
+  }
+  .main-content h1 {
+    font-size: 25px;
+    padding-left: 38px;
+  }
+  .main-content p {
+    font-size: 18px;
+    padding: 5px 20px;
+  }
+  footer h3 {
+    font-size: 25px;
+    padding-left: 38px;
+  }
+  footer p {
+    font-size: 18px;
+    padding-left: 20px;
+  }
+}
