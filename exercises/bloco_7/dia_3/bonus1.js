@@ -13,7 +13,7 @@ function getChange(payable, paid) {
 
 //  Adicionando a função mais criminosa do universo 
   let arr = [];
-  for (let i = 0; i < remaining; i) {
+  for (let i = 0; i < remaining;) {
     if (remaining >= 200) {arr.push(200); remaining -= 200;}
     else if (remaining >= 100) {arr.push(100); remaining -= 100;}
     else if (remaining >= 50) {arr.push(50); remaining -= 50;}
