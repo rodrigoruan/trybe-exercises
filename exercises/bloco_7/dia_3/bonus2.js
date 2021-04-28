@@ -1,6 +1,5 @@
 const assert = require('assert');
 // escreva a função factorial aqui
-
 const factorial = (n) =>
   n === 0 ? 1 : Array.from(Array(n), (x, i) => i + 1).reduce((a, b) => a * b);
 
