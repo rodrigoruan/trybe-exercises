@@ -27,3 +27,10 @@ console.log(newEmployees().id1('Pedro Guerra'));
 console.log(newEmployees().id2('Luiza Drumond'));
 console.log(newEmployees().id3('Carla Paiva'));
 
+//  Exercício 2
+const sorteio = (num) =>
+  num === Math.round(Math.random() * 5)
+    ? 'Parabéns você ganhou'
+    : 'Tente novamente';
+
+console.log(sorteio(2));
