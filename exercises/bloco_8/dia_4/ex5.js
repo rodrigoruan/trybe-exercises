@@ -1,23 +1,17 @@
-const assert = require('assert');
+//Dada o array de nomes, retorne a quantidade de vezes em que aparecem a letra a maiúscula ou minúscula.
+// const assert = require('assert');
 
 const names = [
-  'Aanemarie',
-  'Adervandes',
-  'Akifusa',
-  'Abegildo',
-  'Adicellia',
-  'Aladonata',
-  'Abeladerco',
-  'Adieidy',
-  'Alarucha',
+'Aanemarie', 'Adervandes', 'Akifusa',
+'Abegildo', 'Adicellia', 'Aladonata',
+'Abeladerco', 'Adieidy', 'Alarucha',
 ];
 
-// const containsA = () => names.join('').replace(/[^A]/gi, '').length;
+function containsA() {
+let counter = 0;
+let x = names.join('').toLowerCase().split('').reduce((acc, value) => value === 'a' ? acc += 1 : acc += 0);
+return x
+}
+console.log(containsA())
 
-//  essa de baixo foi só pra não falar que não usei reduce kkkkk.
-const containsA = () =>
-  names
-    .map((c) => c.replace(/[^A]/gi, '').length)
-    .reduce((acc, curr) => acc + curr);
-
-assert.deepStrictEqual(containsA(), 20);
+// assert.deepStrictEqual(containsA(), 20); 
