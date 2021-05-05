@@ -73,9 +73,14 @@ const expectedResult = {
   releaseYear: 1991,
 };
 
+// const longestNamedBook = () =>
+//   books.filter(
+//     (c) => c.name.length === Math.max(...books.map((c) => c.name.length))
+//   )[0];
+
 const longestNamedBook = () =>
-  books.filter(
-    (c) => c.name.length === Math.max(...books.map((c) => c.name.length))
-  )[0];
+  books.reduce((acc, curr) =>
+    curr.name.length > acc.name.length ? curr : acc
+  );
 
 assert.deepStrictEqual(longestNamedBook(), expectedResult);

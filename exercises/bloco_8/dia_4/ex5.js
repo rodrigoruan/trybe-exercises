@@ -12,6 +12,12 @@ const names = [
   'Alarucha',
 ];
 
-const containsA = () => names.join('').replace(/[^A]/gi, '').length;
+// const containsA = () => names.join('').replace(/[^A]/gi, '').length;
+
+//  essa de baixo foi só pra não falar que não usei reduce kkkkk.
+const containsA = () =>
+  names
+    .map((c) => c.replace(/[^A]/gi, '').length)
+    .reduce((acc, curr) => acc + curr);
 
 assert.deepStrictEqual(containsA(), 20);

@@ -63,7 +63,14 @@ const books = [
   },
 ];
 
-const allNames = () => `Nomes: ${books.map((c) => c.author.name).join(', ')}.`;
+// const allNames = () => `Nomes: ${books.map((c) => c.author.name).join(', ')}.`;
+
+// const allNames = () => `Nomes: ${books.map((c) => c.author.name).join('@').replace(/@/g, ', ')}.`;
+
+const allNames = () =>
+  books
+    .reduce((acc, curr) => acc + `${curr.author.name}, `, 'Nomes: ')
+    .replace(/,\s$/g, '.');
 
 assert.deepStrictEqual(
   allNames(),
