@@ -7,11 +7,8 @@ const names = [
 'Abeladerco', 'Adieidy', 'Alarucha',
 ];
 
-function containsA() {
-let counter = 0;
-let x = names.join('').toLowerCase().split('').reduce((acc, value) => value === 'a' ? acc += 1 : acc += 0);
-return x
-}
+const containsA = () => names.join('').replace(/[^A]/gi, '').length
+
 console.log(containsA())
 
 // assert.deepStrictEqual(containsA(), 20); 
