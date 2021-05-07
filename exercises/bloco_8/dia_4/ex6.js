@@ -7,9 +7,9 @@ const chiron = ['Chiron', 'Bugatti', 2016];
 // escreva toObject abaixo
 
 const toObject = ([name, brand, year]) => ({
-  name: name,
-  brand: brand,
-  year: year,
+  name,
+  brand,
+  year,
 });
 
 assert.deepStrictEqual(toObject(palio), {
