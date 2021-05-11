@@ -1,7 +1,5 @@
 const assert = require('assert');
 
-// escreva greet abaixo
-
 const greet = (person, message = 'Hi') => `${message} ${person}`;
 
 assert.strictEqual(greet('John'), 'Hi John');
