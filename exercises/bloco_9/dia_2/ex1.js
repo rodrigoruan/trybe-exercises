@@ -1,16 +1,18 @@
-const promise = new Promise((resolve, reject) => {
-  const arr = [];
+let jokeContainer = document.querySelector('#jokeContainer');
 
-  for (let i = 0; i < 10; i += 1) {
-    arr.push(Math.round(Math.random() * 50) ** 2);
-  }
+const API_URL = 'https://icanhazdadjoke.com/';
 
-  const sum = arr.reduce((acc, curr) => acc + curr, 0);
+const fetchJoke = () => {
+  const myObject = {
+    method: 'GET',
+    headers: { Accept: 'application/json' },
+  };
 
-  return sum < 8000
-    ? resolve(sum)
-    : reject('É mais de oito mil! Essa promise deve estar quebrada!');
-})
-  .then((sum) => [2, 3, 5, 10].map((value) => sum / value))
-  .then((arr) => arr.reduce((acc, curr) => acc + curr, 0))
-  .catch((error) => console.log(error));
+  fetch(API_URL, myObject)
+    .then((response) => response.json())
+    .then((data) => {
+      jokeContainer.innerText = data.joke;
+    });
+};
+
+window.onload = () => fetchJoke();
