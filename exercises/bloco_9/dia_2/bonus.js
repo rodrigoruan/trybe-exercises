@@ -17,9 +17,9 @@ const divisionSum = (arr) => arr.reduce((acc, curr) => acc + curr, 0);
 
 const promise = async () => {
   try {
-    const sum = sumOfAll();
-    const divisions = division(sum);
-    const sumDivision = divisionSum(divisions);
+    const sum = await sumOfAll();
+    const divisions = await division(sum);
+    const sumDivision = await divisionSum(divisions);
     console.log(
       `Sum: ${sum} \nDivision: ${divisions}\nSum of Array: ${sumDivision}`
     );
