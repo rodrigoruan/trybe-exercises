@@ -3,6 +3,8 @@ const funcs = require('./ex1');
 test('testing sum function', () => {
   expect(funcs.sum(4, 5)).toBe(9);
   expect(funcs.sum(0, 0)).toBe(0);
+  expect(() => {funcs.sum(4, '5')}).toThrow();
+  expect(() => {funcs.sum(4, '5')}).toThrow(new Error('parameters must be numbers'));
 });
 
 test('testing myRemove function', () => {
