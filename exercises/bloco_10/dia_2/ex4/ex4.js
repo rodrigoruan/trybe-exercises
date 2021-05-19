@@ -8,6 +8,4 @@ const getRepos = (url) => {
     });
 };
 
-console.log(getRepos('https://api.github.com/orgs/tryber/repos'));
-
 module.exports = getRepos;
