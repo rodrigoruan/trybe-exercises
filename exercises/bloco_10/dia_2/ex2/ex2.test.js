@@ -8,6 +8,7 @@ test('test if promise return id', () => {
 });
 
 test('test if promise return error', () => {
+  expect.hasAssertions();
   return getUserName(6).catch((error) => {
     expect(error).toEqual({ error: 'User with 6 not found.' });
   });
