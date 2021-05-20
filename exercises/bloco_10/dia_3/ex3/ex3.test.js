@@ -1,7 +1,7 @@
 const randomNumber = require('./ex3');
 jest.mock('./ex3');
 
-test('multiplicação', () => {
+test('multiplicação e dobro', () => {
   randomNumber.mockImplementation((a, b, c) => a * b * c);
   expect(randomNumber(2, 2, 2)).toBe(8);
   expect(randomNumber).toHaveBeenCalled();
