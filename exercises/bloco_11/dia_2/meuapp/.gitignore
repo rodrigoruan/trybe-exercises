@@ -1,12 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/yarn.lock
-/README.md
-/public
-/package.json
-/.pnp
+node_modules/
+yarn.lock
+README.md
+public
+package.json
+.pnp
 .pnp.js
 
 # testing
