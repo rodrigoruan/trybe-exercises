@@ -14,21 +14,19 @@ export class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-
-
-  showInfos() {
+  handleClick({ target }) {
+    const { name, value } = target;
     this.setState({
-      form: (
-        <div>
-          {Object.entries(this.state).map((elemento) => (
-            <p key={elemento[0]}>
-              {elemento[0]}: {elemento[1]}
-            </p>
-          ))}
-        </div>
-      ),
+      [name]:
+        name === 'nome'
+          ? value.toUpperCase()
+          : name === 'endereco'
+          ? value.replace(/\W/g, '')
+          : value,
     });
   }
+
+
 
   onBlur({ target }) {
     const { name, value } = target;
