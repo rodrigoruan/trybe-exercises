@@ -7,7 +7,24 @@ const Pokedex = () => {
   const [dados, setDados] = React.useState(0);
   const [pokes, setPokes] = React.useState(pokemons);
 
- 
+  const handleClick = () => {
+    setDados((anterior) => (anterior >= pokes.length - 1 ? 0 : anterior + 1));
+  };
+
+  const changePoke = ({ target }) => {
+    const filtered = /All/.test(target.innerText)
+      ? pokemons
+      : pokemons.filter((pokemon) => pokemon.type === target.innerText);
+
+    setPokes(filtered);
+
+    if (/Dragon|Normal|Poison|Bug|Electric/.test(filtered[0].type)) {
+      setDados(0);
+    } else {
+      handleClick();
+    }
+  };
+
   return (
     <>
       <div className='pokedex'>{<Pokemon pokemon={pokes[dados]} />}</div>
