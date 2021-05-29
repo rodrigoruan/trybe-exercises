@@ -40,7 +40,13 @@ export class App extends Component {
     });
   }
 
-
+  onBlur({ target }) {
+    const { name, value } = target;
+    if (/^\d/.test(value))
+      this.setState({
+        [name]: '',
+      });
+  }
 
   render() {
     let active = true;
