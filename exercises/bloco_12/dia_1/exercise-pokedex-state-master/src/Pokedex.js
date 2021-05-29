@@ -3,6 +3,8 @@ import Pokemon from './Pokemon';
 import pokemons from './data';
 import Button from './Button';
 
+//  Só não postei o com classe porque com função ficou mais bonitinho
+
 const Pokedex = () => {
   const [dados, setDados] = React.useState(0);
   const [pokes, setPokes] = React.useState(pokemons);
