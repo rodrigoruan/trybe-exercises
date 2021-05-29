@@ -26,15 +26,21 @@ export class App extends Component {
     });
   }
 
-
-
-  onBlur({ target }) {
-    const { name, value } = target;
-    if (/^\d/.test(value))
-      this.setState({
-        [name]: '',
-      });
+  showInfos() {
+    this.setState({
+      form: (
+        <div>
+          {Object.entries(this.state).map((elemento) => (
+            <p key={elemento[0]}>
+              {elemento[0]}: {elemento[1]}
+            </p>
+          ))}
+        </div>
+      ),
+    });
   }
+
+
 
   render() {
     let active = true;
