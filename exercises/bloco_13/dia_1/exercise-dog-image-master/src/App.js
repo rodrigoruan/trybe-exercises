@@ -16,14 +16,23 @@ class App extends Component {
     this.fetchApi();
   }
 
+  shouldComponentUpdate(_nextProps, { photo }) {
+    localStorage.setItem('dog', photo);
+    return !photo.includes('terrier');
+  }
+
   async fetchApi() {
     this.setState({ loading: true }, async () => {
       const response = await fetch('https://dog.ceo/api/breeds/image/random');
       const { message } = await response.json();
+
       this.setState({
         photo: message,
         loading: false,
       });
+
+      const dogBreed = message.match(/(?<=breeds\/)\w+-?\w+(?=\/)/);
+      alert(dogBreed);
     });
   }
 
