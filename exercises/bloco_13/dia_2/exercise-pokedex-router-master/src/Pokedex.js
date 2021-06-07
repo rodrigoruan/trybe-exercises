@@ -1,7 +1,7 @@
 import React from 'react';
 import Pokemon from './Pokemon';
 import Button from './Button';
-import './pokedex.css';
+import './css/pokedex.css';
 
 class Pokedex extends React.Component {
   constructor(props) {
@@ -44,7 +44,8 @@ class Pokedex extends React.Component {
 
     return (
       <div className='pokedex'>
-        <Pokemon pokemon={pokemon} />
+        <h1>Pokedex</h1>
+        <Pokemon active={true} pokemon={pokemon} />
         <div className='pokedex-buttons-panel'>
           <Button
             onClick={() => this.filterPokemons('all')}

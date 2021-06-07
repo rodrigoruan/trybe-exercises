@@ -1,13 +1,16 @@
 import React from 'react';
 
+//  Componente que vai renderizar as informações sobre a Pokedéx
+
 const About = () => {
   return (
     <div>
       <img
+        style={{ display: 'block', margin: '0 auto' }}
         src='https://cdn2.bulbagarden.net/upload/4/4b/Pok%C3%A9dex_logo.png'
         alt='Pokedex'
       />
-      <p>
+      <p style={{ maxWidth: '1200px', margin: '0 auto', paddingTop: '20px' }}>
         The Pokédex (Japanese: ポケモン図鑑 illustrated Pokémon encyclopedia) is
         a digital encyclopedia created by Professor Oak as an invaluable tool to
         Trainers in the Pokémon world. It gives information about all Pokémon in
@@ -27,6 +30,12 @@ const About = () => {
         entries describes it as having 80 tentacles when only 14 are visible.
       </p>
       <img
+        style={{
+          display: 'block',
+          width: '500px',
+          margin: '0 auto',
+          padding: '20px',
+        }}
         src='https://cdn2.bulbagarden.net/upload/d/d5/Ash_Original_Pok%C3%A9dex.png'
         alt='Pokedex'
       />

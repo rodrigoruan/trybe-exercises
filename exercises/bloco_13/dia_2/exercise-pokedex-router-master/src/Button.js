@@ -1,12 +1,11 @@
-import React from "react";
-import "./button.css";
+import React from 'react';
+import './css/button.css';
 
 const Button = ({ className, children, disabled, onClick }) => (
   <button
     onClick={onClick}
     className={`button-text ${className}`}
-    disabled={disabled}
-  >
+    disabled={disabled}>
     {children}
   </button>
 );

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './css/App.css';
 import pokemons from './data';
 import Pokedex from './Pokedex';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
@@ -11,15 +11,17 @@ import FavoritedPokemons from './FavoritedPokemons';
 function App() {
   return (
     <BrowserRouter>
-      <Link to='/'>Home</Link>
-      <Link to='/about'>About</Link>
-      <Link to='/favoritedPokemons'>Favorited</Link>
+      {/* Div com os links globais que vão ser renderizados em todas páginas */}
+      <div className='nav-container'>
+        <Link className='nav' to='/'>Home</Link>
+        <Link className='nav' to='/about'>About</Link>
+        <Link className='nav' to='/favoritedPokemons'>Favorited</Link>
+      </div>
+
+      {/* Rotas que vou precisar usar para cada página */}
       <Switch>
         <Route exact path='/' render={() => <Pokedex pokemons={pokemons} />} />
-        <Route
-          path='/pokes/:id'
-          render={(props) => <PokemonDetails pokemons={pokemons} {...props} />}
-        />
+        <Route path='/pokes/:id' render={(props) => <PokemonDetails pokemons={pokemons} {...props} />}/>
         <Route path='/about' component={About} />
         <Route path='/favoritedPokemons' component={FavoritedPokemons} />
         <Route component={NotFound} />
