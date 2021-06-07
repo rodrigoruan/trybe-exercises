@@ -26,6 +26,10 @@ const About = () => {
         inaccurate or mythical information. For example, some of Tentacruel's
         entries describes it as having 80 tentacles when only 14 are visible.
       </p>
+      <img
+        src='https://cdn2.bulbagarden.net/upload/d/d5/Ash_Original_Pok%C3%A9dex.png'
+        alt='Pokedex'
+      />
     </div>
   );
 };
