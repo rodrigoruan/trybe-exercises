@@ -88,7 +88,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 ##### Bloco 11: Introdução - React
 
 - [x] 11-1: _'Hello, world!' no React!_
-- [] 11-2: _Componentes React_
+- [x] 11-2: _Componentes React_
 - [x] 11-3: _[Projeto - Movie Cards Library]()_
 
 ##### Bloco 12: React
