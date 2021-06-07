@@ -5,6 +5,7 @@ import Pokedex from './Pokedex';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import PokemonDetails from './PokemonDetails';
 import About from './About';
+import NotFound from './NotFound';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           render={(props) => <PokemonDetails pokemons={pokemons} {...props} />}
         />
         <Route path='/about' component={About} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
