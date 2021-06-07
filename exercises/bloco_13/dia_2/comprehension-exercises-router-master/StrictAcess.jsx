@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 
-const StrictAcess = ({ user: { username, password } }) => {
+const StrictAcess = ({ username, password }) => {
   if (/joao/.test(username) && /1234/.test(password)) {
     return <p>Welcome joao!</p>;
   }
