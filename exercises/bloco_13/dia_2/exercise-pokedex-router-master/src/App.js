@@ -12,7 +12,6 @@ function App() {
     <BrowserRouter>
       <Link to='/'>Home</Link>
       <Link to='/about'>About</Link>
-      <Link to='/'>Home</Link>
       <Switch>
         <Route exact path='/' render={() => <Pokedex pokemons={pokemons} />} />
         <Route

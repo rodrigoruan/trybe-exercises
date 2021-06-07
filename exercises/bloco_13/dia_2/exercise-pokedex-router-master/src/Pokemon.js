@@ -17,6 +17,9 @@ class Pokemon extends React.Component {
         </div>
         <img src={image} alt={`${name} sprite`} />
         <Link to={() => `/pokes/${id}`}>More details</Link>
+        {localStorage.getItem(name) && (
+          <div>☆</div>
+        )}
       </div>
     );
   }
