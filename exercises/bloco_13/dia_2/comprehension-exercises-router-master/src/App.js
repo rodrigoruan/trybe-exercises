@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Home from './components/Home';
 import { BrowserRouter, Route } from 'react-router-dom';
-import About from './components/About';
+import About from './components/About'
 
 class App extends Component {
   render() {
