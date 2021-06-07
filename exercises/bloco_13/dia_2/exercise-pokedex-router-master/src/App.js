@@ -2,17 +2,19 @@ import React from 'react';
 import './App.css';
 import pokemons from './data';
 import Pokedex from './Pokedex';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import PokemonDetails from './PokemonDetails';
 
 function App() {
   return (
     <BrowserRouter>
-      <Link to='/pokemons/'>More infos about pokemon</Link>
-      {/* <Route
-        path='/pokemons/:id'
-        render={(props) => <PokemonInfos pokemon={pokemons} {...props} />}
-      /> */}
-      <Route path='/' render={() => <Pokedex pokemons={pokemons} />} />
+      <Switch>
+        <Route exact path='/' render={() => <Pokedex pokemons={pokemons} />} />
+        <Route
+          path='/pokes/:id'
+          render={(props) => <PokemonDetails pokemons={pokemons} {...props} />}
+        />
+      </Switch>
     </BrowserRouter>
   );
 }
