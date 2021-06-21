@@ -4,13 +4,28 @@ import Item from './Item';
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       listTodo: [],
+      selectedTask: '',
     };
 
     this.addTodo = this.addTodo.bind(this);
+    this.selectTask = this.selectTask.bind(this);
+    this.removeTask = this.removeTask.bind(this);
+  }
+
+  selectTask({ target: { parentNode } }) {
+    this.setState({ selectedTask: parentNode });
+  }
+
+  removeTask() {
+    const { selectedTask, listTodo } = this.state;
+    this.setState({
+      listTodo: listTodo.filter((task) => task !== selectedTask.innerText),
+      selectedTask: '',
+    });
   }
 
   addTodo(todo) {
@@ -18,21 +33,24 @@ class App extends Component {
   }
 
   render() {
-    const { listTodo } = this.state;
+    const { listTodo, selectedTask } = this.state;
     return (
-      <div className="App">
-        <InputTodo addTodo={(todo) => this.addTodo(todo)} />
-        {listTodo &&
+      <div className='App'>
+        <InputTodo
+          listTodo={listTodo}
+          removeTask={this.removeTask}
+          selectedTask={selectedTask}
+          addTodo={(todo) => this.addTodo(todo)}
+        />
+        {listTodo && (
           <ul>
-            {
-              listTodo.map((todo, index) => (
-                <li key={index + 1}>
-                  <Item  content={todo} />
-                </li>
-              ))
-            }
+            {listTodo.map((todo, index) => (
+              <li key={index + 1}>
+                <Item onClick={this.selectTask} content={todo} />
+              </li>
+            ))}
           </ul>
-        }
+        )}
       </div>
     );
   }
