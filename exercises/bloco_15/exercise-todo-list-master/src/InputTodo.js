@@ -41,11 +41,11 @@ class InputTodo extends Component {
           onClick={() => this.addItem(textTodo, addTodo)}
         />
         <input
+          onClick={removeTask}
           data-testid='id-remove'
           value='Remover'
           disabled={selectedTask === '' || listTodo.length === 0}
           type='button'
-          onClick={removeTask}
         />
       </div>
     );

@@ -16,14 +16,14 @@ class App extends Component {
     this.removeTask = this.removeTask.bind(this);
   }
 
-  selectTask({ target: { parentNode } }) {
-    this.setState({ selectedTask: parentNode });
+  selectTask(e) {
+    this.setState({ selectedTask: e });
   }
 
   removeTask() {
     const { selectedTask, listTodo } = this.state;
     this.setState({
-      listTodo: listTodo.filter((task) => task !== selectedTask.innerText),
+      listTodo: listTodo.filter((task) => task !== selectedTask),
       selectedTask: '',
     });
   }

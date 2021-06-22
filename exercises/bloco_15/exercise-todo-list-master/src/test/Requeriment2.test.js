@@ -5,7 +5,7 @@ import Item from '../Item';
 
 describe('Testando a aplicação, testando o botão de adicionar tarefa', () => {
   const listTodo = ['Realizar CR', 'Ler Post no Medium', 'Beber água'];
-  const { getByTestId, getByLabelText, getAllByTestId } = render(<App />);
+  const { getByTestId, getByLabelText, getAllByTestId, getByText } = render(<App />);
   const sendButton = getByTestId('id-send-button');
   const inputTask = getByLabelText('Tarefa:');
 
@@ -18,8 +18,8 @@ describe('Testando a aplicação, testando o botão de adicionar tarefa', () => 
 
   it('Verificando se as tarefas foram adicionadas ao digitar elas e clicar no botão', () => {
     expect(allTasks.length).toBe(3);
-    allTasks.forEach((task) => {
-      expect(task).toBeInTheDocument();
+    listTodo.forEach((task) => {
+      expect(getByText(task)).toBeInTheDocument();
     });
   });
 });
