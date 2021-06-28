@@ -1,6 +1,6 @@
 //  Define a function named actionCreator() that returns the action object when called.
 const action = {
-  type: 'LOGIN'
+  type: 'LOGIN',
 }
 
 // Define an action creator here:
