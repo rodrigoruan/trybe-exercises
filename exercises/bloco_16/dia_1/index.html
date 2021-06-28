@@ -49,13 +49,13 @@
           case 'INCREMENT':
             return {
               counter: state.counter + action.value,
-              clickCount: state.clickCount + action.clickCounter,
+              clickCount: state.clickCount + 1,
               previousValues: [...state.previousValues, action.value],
             }
           case 'DECREMENT':
             return {
               counter: state.counter - action.value,
-              clickCount: state.clickCount + action.clickCounter,
+              clickCount: state.clickCount + 1,
               previousValues: [...state.previousValues, action.value],
             }
           default:
@@ -67,7 +67,6 @@
         store.dispatch({
           type: 'INCREMENT',
           value: incValue,
-          clickCounter: 1,
         })
       })
 
@@ -75,7 +74,6 @@
         store.dispatch({
           type: 'DECREMENT',
           value: decValue,
-          clickCounter: 1,
         })
       })
 
