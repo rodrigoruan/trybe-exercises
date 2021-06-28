@@ -7,5 +7,3 @@ const action = {
 const actionCreator = (action) => {
   return action
 }
-
-actionCreator(action)
