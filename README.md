@@ -40,11 +40,11 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 
 ##### Bloco 5: Introdução - JavaScript - Projetos
 
-- [x] 5-1: _[Projeto - Meme Generator]()_
-- [x] 5-2: _[Projeto - Arte com Pixels]()_
-- [x] 5-3: _[Projeto - Lista de tarefas]()_
-- [x] 5-4: _[Projeto - Adivinhe a Cor]()_
-- [x] 5-5: _[Projeto - Carta Misteriosa]()_
+- [x] 5-1: _Projeto - Meme Generator_
+- [x] 5-2: _Projeto - Arte com Pixels_
+- [x] 5-3: _Projeto - Lista de tarefas_
+- [x] 5-4: _Projeto - Adivinhe a Cor_
+- [x] 5-5: _Projeto - Carta Misteriosa_
 
 ## Desenvolvimento Front-end :white_check_mark:
 
@@ -55,7 +55,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 - [x] 6-3: _CSS Flexbox - Part 1_
 - [x] 6-4: _CSS Flexbox - Part 2_
 - [x] 6-5: _CSS Responsivo - Mobile First_
-- [x] 6-6: _[Projeto - Página inicial do Facebook]()_
+- [x] 6-6: _Projeto - Página inicial do Facebook_
 
 ##### Bloco 7: JavaScript ES6 & Testes Unitários
 
@@ -63,77 +63,77 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 - [x] 7-2: _JavaScript ES6 - Objects_
 - [x] 7-3: _Testes unitários em JavaScript_
 - [x] 7-4: _Testando em pequenos passos_
-- [x] 7-5: _[Projeto - JavaScript Testes Unitários]()_
+- [x] 7-5: _Projeto - JavaScript Testes Unitários_
 
 ##### Bloco 8: JavaScript ES6
 
 - [x] 8-1: _JavaScript ES6 - Higher Order Functions - forEach, find, filter, some, every, sort_
 - [x] 8-2: _JavaScript ES6 - Higher Order Functions - map e reduce_
 - [x] 8-3: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
-- [x] 8-4: _[Projeto - Zoo functions]()_
+- [x] 8-4: _Projeto - Zoo functions_
 
 ##### Bloco 9: Assincronicidade & Callbacks
 
 - [x] 9-1: _Primeiros passos no Jest_
 - [x] 9-2: _JavaScript Assíncrono e Callbacks_
 - [x] 9-3: _JavaScript Promises_
-- [x] 9-4: _[Projeto - Carrinho de Compras]()_
+- [x] 9-4: _Projeto - Carrinho de Compras_
 
 ##### Bloco 10: Jest
 
 - [x] 10-1: _Jest - Testes Assíncronos_
 - [x] 10-2: _Jest - Simulando comportamentos_
-- [x] 10-3: _[Projeto - Jest Assíncrono e Mocking]()_
+- [x] 10-3: _Projeto - Jest Assíncrono e Mocking_
 
 ##### Bloco 11: Introdução - React
 
 - [x] 11-1: _'Hello, world!' no React!_
 - [x] 11-2: _Componentes React_
-- [x] 11-3: _[Projeto - Movie Cards Library]()_
+- [x] 11-3: _Projeto - Movie Cards Library_
 
 ##### Bloco 12: React
 
 - [x] 12-1: _Components com estado_
 - [x] 12-2: _Eventos e formulários no React_
-- [x] 12-3: _[Projeto - Movie Cards Library Stateful]()_
+- [x] 12-3: _Projeto - Movie Cards Library Stateful_
 
 ##### Bloco 13: React
 
 - [x] 13-1: _Melhorando o reuso de componentes: props.children e PropTypes_
 - [x] 13-2: _Ciclo de vida de componentes em React_
 - [x] 13-3: _React Router_
-- [] 13-4: _[Projeto - Movie Cards Library CRUD]()_
+- [] 13-4: _Projeto - Movie Cards Library CRUD_
 
 ##### Bloco 14: Metodologias Ágeis
 
-- [] 14-1: _Metodologias Ágeis_
-- [] 14-2: _[Projeto - Frontend Online Store]()_
+- [x] 14-1: _Metodologias Ágeis_
+- [x] 14-2: _Projeto - Frontend Online Store_
 
 ##### Bloco 15: Testes em React
 
-- [] 15-1: _Testando React com a React Testing Library_
-- [] 15-2: _Testando React com a React Testing Library - Parte 2_
-- [] 15-3: _[Projeto - Testes em React]()_
+- [x] 15-1: _Testando React com a React Testing Library_
+- [x] 15-2: _Testando React com a React Testing Library - Parte 2_
+- [x] 15-3: _Projeto - Testes em React_
 
 ##### Bloco 16: Introdução ao Redux
 
-- [] 16-1: _Introdução ao Redux_
-- [] 16-2: _React com Redux - Parte 1_
-- [] 16-3: _React com Redux - Prática_
-- [] 16-4: _React com Redux - Parte 2_
-- [] 16-5: _Testes síncronos com React-Redux_
-- [] 16-6: _[Projeto - Tabela com filtros de dados]()_
+- [x] 16-1: _Introdução ao Redux_
+- [x] 16-2: _React com Redux - Parte 1_
+- [x] 16-3: _React com Redux - Prática_
+- [x] 16-4: _React com Redux - Parte 2_
+- [x] 16-5: _Testes síncronos com React-Redux_
+- [x] 16-6: _Projeto - Tabela com filtros de dados_
 
 ##### Bloco 17: Projeto React
 
-- [] 17-1: _[Projeto - Jogo de Trivia]()_
+- [x] 17-1: _[Projeto - Jogo de Trivia]()_
 
 ##### Bloco 18: React & Context API
 
-- [] 18-1: _Context API do React_
-- [] 18-2: _React Hooks - useState e useContext_
-- [] 18-3: _React Hooks - useEffect e Hooks customizados_
-- [] 18-4: _[Projeto - StarWars Datatable com Context API e Hooks]()_
+- [x] 18-1: _Context API do React_
+- [x] 18-2: _React Hooks - useState e useContext_
+- [x] 18-3: _React Hooks - useEffect e Hooks customizados_
+- [x] 18-4: _Projeto - StarWars Datatable com Context API e Hooks_
 
 ##### Bloco 19: Projeto Final de Front-end
 
