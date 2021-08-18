@@ -1,0 +1,47 @@
+.intro-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 auto;
+  color: #252525;
+  text-align: center;
+  font-family: ;
+}
+
+h3 {
+  text-align: center;
+  color: #252525;
+}
+
+.background-color,
+.text-color,
+.font-size,
+.spacing,
+.font-family {
+  float: left;
+  padding: 0 54px;
+}
+
+h1 {
+  text-align: center;
+  display: block;
+  padding-top: 150px;
+  padding-right: 90px;
+}
+
+p {
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#text {
+  font-size: 20px;
+  font-family: ;
+}

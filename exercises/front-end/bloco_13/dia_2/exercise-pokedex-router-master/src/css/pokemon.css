@@ -1,0 +1,31 @@
+.pokemon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1 1 auto;
+  min-width: 25%;
+  margin: 10px 10px;
+  border: 1px gray solid;
+  border-radius: 10px;
+  background-color: white;
+  padding-bottom: 10px;
+}
+
+.pokemon p,
+.link {
+  padding-left: 15px;
+}
+
+.link {
+  color: blue;
+  text-decoration: none;
+}
+
+.link:hover {
+  transition: 1s;
+  color: red;
+}
+
+.link:not(:hover) {
+  transition: 0.5s;
+}

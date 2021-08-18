@@ -1,0 +1,59 @@
+body {
+  background-color: #eee;
+}
+
+button {
+  background: none;
+  border: 1px solid #252525;
+  cursor: pointer;
+  margin-left: 25px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background: #252525;
+  color: #eee;
+  transition: 0.5s;
+}
+
+.selected-tech {
+  color: #252525;
+  text-align: center;
+  font-size: 30px;
+}
+
+.select-tech {
+  background: none;
+  border: 1px solid #252525;
+  cursor: pointer;
+  display: block;
+  margin-left: 25px;
+  margin: 0 auto;
+  transition: 0.5s;
+}
+
+.date {
+  text-align: center;
+}
+
+.loading {
+  color: #252525;
+  text-align: center;
+}
+
+.link {
+  background: #efefef;
+  color: #252525;
+  display: block;
+  margin-top: 15px;
+  margin-left: 50px;
+  padding: 10px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.link:hover {
+  background: #252525;
+  color: #eee;
+  transition: 0.5s;
+}
