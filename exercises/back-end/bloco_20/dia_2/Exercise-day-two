@@ -104,4 +104,3 @@ FROM sakila.film
 ORDER BY rental_duration DESC, replacement_cost ASC 
 LIMIT 20;
 
-
