@@ -53,3 +53,6 @@ R: SELECT DISTINCT Nome FROM Escola.Alunos;
 
 4 - Quantas linhas você encontraria na query anterior?
 R: 4 row(s) returned;
+
+5 - Monte uma query para encontrar somente as idades únicas.
+R: SELECT DISTINCT Idade FROM Escola.Alunos;
