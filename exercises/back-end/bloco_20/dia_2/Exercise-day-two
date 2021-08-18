@@ -25,3 +25,6 @@ R: SELECT first_name,  last_name from sakila.customer;
 
 3 - Escreva uma query que exiba todas as colunas da tabela rental ;
 R: SELECT * FROM sakila.rental;
+
+4 - Escreva uma query que exiba o título, a descrição e a data de lançamento dos filmes registrados na tabela film ;
+R: SELECT title, description, release_year FROM sakila.film;
