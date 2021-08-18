@@ -81,4 +81,7 @@ R: SELECT title, release_year, rating FROM sakila.film;
 3 - Quantos filmes temos cadastrados?
 R: SELECT COUNT(*) FROM sakila.film; (1000)
 
+4 - Escreva uma query que exiba apenas os sobrenomes únicos cadastrados.
+R: SELECT DISTINCT last_name FROM sakila.actor;
+
 
