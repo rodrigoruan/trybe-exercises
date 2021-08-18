@@ -14,3 +14,8 @@ R: SELECT 13 * 8 AS response; '104'
 
 5 - Monte uma query que exiba a data e hora atuais. Dê a essa coluna o nome "Data Atual".
 R: SELECT now() AS "Data Atual";
+
+Exercício Prático - Parte 2:
+
+1 - Escreva uma query que selecione todas as colunas da tabela city ;
+R: SELECT * FROM sakila.city;
