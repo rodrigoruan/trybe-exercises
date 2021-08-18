@@ -47,3 +47,6 @@ ORDER BY Hours ASC LIMIT 1 OFFSET 1;
 14 - Escreva uma query para exibir todas as informações dos cinco projetos com a menor quantidade de horas.
 R: SELECT * FROM Projects
 ORDER BY Hours ASC LIMIT 5;
+
+15 - Escreva uma query que exiba a string "Existem Number cientistas na tabela Scientists.", em que Number se refira a quantidade de cientistas.
+R: SELECT CONCAT('Existem ', COUNT(DISTINCT Name), ' cientistas na tabela Scientists.') FROM Scientists;
