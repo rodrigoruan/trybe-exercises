@@ -5,3 +5,6 @@ R: SELECT 'Rodrigo' AS 'Nome';
 
 2 - Monte uma query que exiba seu nome, sobrenome, cidade natal e idade na tela;
 R: SELECT 'Rodrigo' AS 'name', 'Ruan' AS 'last name', 'Itajubá' AS 'city', 20 AS 'age';
+
+3 - Monte uma query que, além de exibir todas as informações já mencionadas, identifique cada coluna usando o AS , que é chamado de alias na linguagem SQL ( alias é como um apelido no português);
+R: SELECT 'Rodrigo' AS 'name', 'Ruan' AS 'last name', 'Itajubá' AS 'city', 20 AS 'age';
