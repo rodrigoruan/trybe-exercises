@@ -70,3 +70,9 @@ R: SELECT COUNT(staff_id) FROM sakila.staff; (2)
 
 3 - Quantos emails temos cadastrados nessa tabela?
 R: SELECT COUNT(email) FROM sakila.staff; (2)
+
+Exercício Prático - Parte 6:
+1 - Escreva uma query que exiba todos os filmes cadastrados no banco de dados.
+R: SELECT * FROM sakila.film;
+
+
