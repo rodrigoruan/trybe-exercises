@@ -44,3 +44,6 @@ Exercício Prático - Parte 4:
 
 1 - Monte uma query para encontrar pares únicos de nomes e idades .
 R: SELECT DISTINCT Nome, Idade FROM Escola.Alunos;
+
+2 - Quantas linhas você encontraria na query anterior?
+R: 15 row(s) returned;
