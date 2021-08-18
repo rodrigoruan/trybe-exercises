@@ -69,3 +69,7 @@ ORDER BY Price DESC LIMIT 4 OFFSET 3;
 R: SELECT * FROM Provides
 WHERE Provider = 'HAL'
 ORDER BY Price DESC;
+
+5 - Escreva uma query para exibir por quantas empresas a peça 1 é provida.
+R: SELECT COUNT(Provider) FROM Provides
+WHERE Piece = 1;
