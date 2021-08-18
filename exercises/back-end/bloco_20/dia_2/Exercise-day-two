@@ -84,4 +84,7 @@ R: SELECT COUNT(*) FROM sakila.film; (1000)
 4 - Escreva uma query que exiba apenas os sobrenomes únicos cadastrados.
 R: SELECT DISTINCT last_name FROM sakila.actor;
 
+5 - Quantos sobrenomes únicos temos na tabela?
+R: SELECT COUNT(DISTINCT last_name) FROM sakila.actor; (121)
+
 
