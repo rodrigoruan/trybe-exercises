@@ -46,7 +46,10 @@ Exercício Prático - Parte 4:
 R: SELECT DISTINCT Nome, Idade FROM Escola.Alunos;
 
 2 - Quantas linhas você encontraria na query anterior?
-R: 15 row(s) returned;
+R: 5 row(s) returned;
 
 3 - Monte uma query para encontrar somente os nomes únicos.
 R: SELECT DISTINCT Nome FROM Escola.Alunos;
+
+4 - Quantas linhas você encontraria na query anterior?
+R: 4 row(s) returned;
