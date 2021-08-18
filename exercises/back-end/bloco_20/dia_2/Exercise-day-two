@@ -11,3 +11,6 @@ R: SELECT 'Rodrigo' AS 'name', 'Ruan' AS 'last name', 'Itajubá' AS 'city', 20 A
 
 4 - Qual é o resultado de 13 * 8 ? Descubra usando apenas o SELECT ;
 R: SELECT 13 * 8 AS response; '104'
+
+5 - Monte uma query que exiba a data e hora atuais. Dê a essa coluna o nome "Data Atual".
+R: SELECT now() AS "Data Atual";
