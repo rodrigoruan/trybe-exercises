@@ -94,3 +94,7 @@ ORDER BY last_name ASC, first_name DESC;
 7 - Vá até a tabela language do sakila e crie uma pesquisa que mostre os 5 idiomas cadastrados , mas não mostre o idioma english .
 R: SELECT * FROM sakila.language
 WHERE name <> 'english';
+
+8 - Vá até a tabela film e selecione todos os dados da tabela.
+R: SELECT * FROM sakila.film;
+
