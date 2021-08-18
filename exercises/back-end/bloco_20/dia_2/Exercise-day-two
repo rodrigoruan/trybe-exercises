@@ -90,3 +90,7 @@ R: SELECT COUNT(DISTINCT last_name) FROM sakila.actor; (121)
 6 - Ordene os valores na tabela em ordem crescente de sobrenomes e em ordem decrescente de nome.
 R: SELECT * FROM sakila.actor
 ORDER BY last_name ASC, first_name DESC;
+
+7 - Vá até a tabela language do sakila e crie uma pesquisa que mostre os 5 idiomas cadastrados , mas não mostre o idioma english .
+R: SELECT * FROM sakila.language
+WHERE name <> 'english';
