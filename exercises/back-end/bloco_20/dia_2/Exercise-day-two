@@ -78,4 +78,7 @@ R: SELECT * FROM sakila.film;
 2 - Escreva uma query que exiba apenas o nome dos filmes, seu ano de lançamento e sua classificação .
 R: SELECT title, release_year, rating FROM sakila.film;
 
+3 - Quantos filmes temos cadastrados?
+R: SELECT COUNT(*) FROM sakila.film; (1000)
+
 
