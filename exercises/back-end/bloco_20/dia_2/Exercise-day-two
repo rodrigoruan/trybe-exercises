@@ -59,3 +59,8 @@ R: SELECT DISTINCT Idade FROM Escola.Alunos;
 
 6 - Quantas linhas você encontraria na query anterior?
 R: 4 row(s) returned;
+
+Exercício Prático - Parte 5:
+
+1 - Quantas senhas temos cadastradas nessa tabela?
+R: SELECT COUNT(password) FROM sakila.staff; (1)
