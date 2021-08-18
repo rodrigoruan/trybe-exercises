@@ -75,4 +75,7 @@ Exercício Prático - Parte 6:
 1 - Escreva uma query que exiba todos os filmes cadastrados no banco de dados.
 R: SELECT * FROM sakila.film;
 
+2 - Escreva uma query que exiba apenas o nome dos filmes, seu ano de lançamento e sua classificação .
+R: SELECT title, release_year, rating FROM sakila.film;
+
 
