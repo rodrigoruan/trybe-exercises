@@ -1,0 +1,7 @@
+Exercício Prático:
+
+1 - Monte uma query que exiba seu nome na tela;
+R: SELECT 'Rodrigo' AS 'Nome';
+
+2 - Monte uma query que exiba seu nome, sobrenome, cidade natal e idade na tela;
+R: SELECT 'Rodrigo' AS 'name', 'Ruan' AS 'last name', 'Itajubá' AS 'city', 20 AS 'age';
