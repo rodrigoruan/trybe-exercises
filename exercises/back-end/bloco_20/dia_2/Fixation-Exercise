@@ -1,2 +1,8 @@
 1 - Escreva uma query para exibir a string "This is SQL Exercise, Practice and Solution".
 R: SELECT 'This is SQL Exercise, Practice and Solution' AS message;
+
+2 - Escreva uma query para exibir três números em três colunas.
+R: SELECT 1 AS first_column, 2 AS second_column, 3 AS thirth_column;
+
+3 - Escreva uma query para exibir a soma dos números 10 e 15.
+R: SELECT 10 + 15 AS sum_of_numbers;
