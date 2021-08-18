@@ -50,3 +50,9 @@ ORDER BY Hours ASC LIMIT 5;
 
 15 - Escreva uma query que exiba a string "Existem Number cientistas na tabela Scientists.", em que Number se refira a quantidade de cientistas.
 R: SELECT CONCAT('Existem ', COUNT(DISTINCT Name), ' cientistas na tabela Scientists.') FROM Scientists;
+
+Exercícios Bônus:
+
+1 - Escreva uma query para exibir a peça e o preço de tudo que é provido pela empresa RBT .
+R: SELECT * FROM Provides
+WHERE Provider = 'RBT';
