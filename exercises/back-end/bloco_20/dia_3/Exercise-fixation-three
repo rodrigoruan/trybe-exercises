@@ -46,3 +46,7 @@ ORDER BY Name ASC;
 R: SELECT Code, Name FROM Projects
 WHERE Code LIKE '%3%'
 ORDER BY Name ASC;
+
+4 - Escreva uma query para exibir todos os cientistas (valores numéricos) cujos projetos sejam AeH3 , Ast3 ou Che1 .
+R: SELECT * FROM Projects
+WHERE Code IN('AeH3', 'Ast3', 'Che1');
