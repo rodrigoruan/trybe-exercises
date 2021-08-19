@@ -95,3 +95,9 @@ R: SELECT title, rating FROM sakila.film
 WHERE rating IN ('G', 'PG', 'PG-13')
 ORDER BY title ASC
 LIMIT 500;
+
+Exercícios práticos - parte 4:
+
+1 - Quantos pagamentos temos com a data de retorno 2005-05-25 ? Há múltiplas maneiras possíveis de encontrar a resposta.
+R: SELECT COUNT(*) FROM sakila.payment
+WHERE payment_date LIKE '2005-05-25%'; (137)
