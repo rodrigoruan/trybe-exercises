@@ -67,3 +67,11 @@ OR title LIKE 'mosquito%';
 R: SELECT * FROM sakila.film
 WHERE description LIKE '%monkey%'
 AND description LIKE '%sumo%';
+
+Exercícios práticos - parte 3:
+
+1 - Mostre o nome, sobrenome e e-mail dos clientes com os seguintes sobrenomes: hicks, crawford, henry, boyd, mason, morales e kennedy , ordenados por nome em ordem alfabética.
+R: SELECT first_name, last_name, email FROM sakila.customer
+WHERE last_name 
+IN ('hicks', 'crawfork', 'henry', 'boyd', 'mason', 'morales', 'kennedy')
+ORDER BY first_name ASC;
