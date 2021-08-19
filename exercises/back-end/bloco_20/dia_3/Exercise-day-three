@@ -39,3 +39,7 @@ Exercícios práticos - parte 2:
 1 - Mostre todos os detalhes dos filmes que contêm a palavra ace no nome.
 R: SELECT * FROM sakila.film
 WHERE title LIKE '%ace';
+
+2 - Mostre todos os detalhes dos filmes cujas descrições finalizam com china .
+R: SELECT * FROM sakila.film
+WHERE description LIKE '%china';
