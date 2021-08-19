@@ -10,3 +10,10 @@ WHERE active IS FALSE
 AND store_id = 2
 AND first_name NOT LIKE 'KENNETH'
 ORDER BY first_name ASC;
+
+3 - O setor financeiro quer saber título, descrição, ano de lançamento e valor do custo de substituição ( replacement_cost ), dos 100 filmes com o maior custo de substituição, do valor mais alto ao mais baixo, entre os filmes feitos para menores de idade e que têm o custo mínimo de substituição de $18,00 dólares. Em caso de empate, ordene em ordem alfabética pelo título.
+R: SELECT title, description, release_year, replacement_cost FROM sakila.film
+WHERE rating <> 'NC-17'
+AND replacement_cost >= 18.00
+ORDER BY replacement_cost, title DESC
+LIMIT 100;
