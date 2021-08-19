@@ -22,3 +22,8 @@ LIMIT 100;
 R: SELECT COUNT(*) FROM sakila.customer
 WHERE active IS TRUE
 AND store_id = 1;
+
+5 - Mostre todos os detalhes dos clientes que não estão ativos na loja 1 .
+R: SELECT * FROM sakila.customer
+WHERE active IS FALSE
+AND store_id = 1;
