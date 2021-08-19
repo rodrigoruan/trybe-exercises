@@ -75,3 +75,8 @@ R: SELECT first_name, last_name, email FROM sakila.customer
 WHERE last_name 
 IN ('hicks', 'crawfork', 'henry', 'boyd', 'mason', 'morales', 'kennedy')
 ORDER BY first_name ASC;
+
+2 - Mostre o e-mail dos clientes com os address_id 172, 173, 174, 175 e 176 , ordenados em ordem alfabética.
+R: SELECT email FROM sakila.customer
+WHERE address_id IN (172, 173, 174, 175, 176)
+ORDER BY email ASC;
