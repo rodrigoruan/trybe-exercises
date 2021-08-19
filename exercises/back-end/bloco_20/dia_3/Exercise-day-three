@@ -48,3 +48,7 @@ WHERE description LIKE '%china';
 R: SELECT * FROM sakila.film
 WHERE description LIKE '%girl%'
 AND title LIKE '%lord';
+
+4 - Mostre os dois casos em que, a partir do 4° caractere no título do filme, tem-se a palavra gon .
+R: SELECT * FROM sakila.film
+WHERE title LIKE '___gon%';
