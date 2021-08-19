@@ -17,3 +17,8 @@ WHERE rating <> 'NC-17'
 AND replacement_cost >= 18.00
 ORDER BY replacement_cost, title DESC
 LIMIT 100;
+
+4 - Quantos clientes estão ativos e na loja 1 ?
+R: SELECT COUNT(*) FROM sakila.customer
+WHERE active IS TRUE
+AND store_id = 1;
