@@ -33,3 +33,9 @@ R: SELECT * FROM sakila.film
 WHERE rating = 'NC-17'
 ORDER BY rental_rate, title DESC
 LIMIT 50;
+
+Exercícios práticos - parte 2:
+
+1 - Mostre todos os detalhes dos filmes que contêm a palavra ace no nome.
+R: SELECT * FROM sakila.film
+WHERE title LIKE '%ace';
