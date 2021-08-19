@@ -1,0 +1,5 @@
+Exercícios de fixação:
+
+1 - Escreva uma query para exibir todas as peças que começam com GR .
+R: SELECT * FROM Pecas
+WHERE name LIKE 'gr%';
