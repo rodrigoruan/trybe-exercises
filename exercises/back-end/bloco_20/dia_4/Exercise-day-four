@@ -1,0 +1,110 @@
+Exercícios práticos - parte 1:
+
+1 - Insira um novo funcionário na tabela sakila.staff .
+R: 
+INSERT INTO sakila.staff (first_name, last_name, address_id, email, store_id, username, `password`)
+VALUES ('Rodrigo', 'Souza', 5, 'rodrigopython16@gmail.com', 1, 'rodrigoregex', '12345678');
+
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+2 - Insira dois funcionários novos em apenas uma query .
+R:
+INSERT INTO sakila.staff 
+	(first_name, last_name, address_id, email, store_id, username, `password`)
+VALUES ('Carlos', 'Alberto', 5, 'cazalbe@gmail.com', 1, 'Carlin', '54321'),
+       ('Silvio', 'Santos', 5, 'silvinho@gmail.com', 1, 'silvioSBT', '8974');
+
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+3 - Selecione os cinco primeiros nomes e sobrenomes da tabela sakila.customer e cadastre essas pessoas como atores na tabela sakila.actor .
+R: 
+INSERT INTO sakila.actor (first_name, last_name)
+	SELECT first_name, last_name
+FROM sakila.customer LIMIT 5;
+
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+4 - Cadastre três categorias de uma vez só na tabela sakila.category .
+R: 
+INSERT INTO sakila.category (name)
+VALUES ('rodrigo'), 
+       ('ruan'),
+       ('souza'); "CRIATIVIDADE BATEU ALTO NESSE kkkkk"
+
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+5 - Cadastre uma nova loja na tabela sakila.store .
+R: 
+INSERT INTO sakila.store (manager_staff_id, address_id)
+VALUES (3, 3);
+
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+Exercícios práticos - parte 2:
+
+1 - Atualize o primeiro nome de todas as pessoas da tabela sakila.actor que possuem o primeiro nome "JULIA" para "JULES".
+R: 
+UPDATE sakila.actor
+SET first_name = 'JULES'
+WHERE first_name = 'JULIA';
+
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+2 - Foi exigido que a categoria "Sci-Fi" seja alterada para "Science Fiction".
+R: 
+UPDATE sakila.category
+SET name = 'Science Fiction'
+WHERE name = 'Sci-Fi';
+
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+3 - Atualize o valor do aluguel para $25 de todos os filmes com duração maior que 100 minutos e que possuem a classificações "G" , "PG" ou "PG-13" e um custo de substituição maior que $20.
+R: 
+UPDATE sakila.film
+SET replacement_cost = 25.00
+WHERE length > 100 
+AND rating IN ('G', 'PG', 'PG-13')
+AND replacement_cost > 20;
+
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+4 - Foi determinado pelo setor financeiro que haverá um reajuste em todos os preços dos filmes, com base em sua duração. Para todos os filmes com duração entre 0 e 100, o valor do aluguel passará a ser $10,00, e o aluguel dos filmes com duração acima de 100 passará a ser de $20,00.
+R: 
+UPDATE sakila.film 
+  SET replacement_cost = (
+	IF(length BETWEEN 0 AND 100, 10.00, 20.00)
+  );
+
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+Exercícios práticos - parte 3:
+
+1 - Exclua do banco de dados o ator com o nome de "KARL".
+DELETE FROM sakila.film_actor
+WHERE actor_id = 12;
+
+DELETE FROM sakila.actor
+WHERE first_name = 'KARL';
+
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+2 - Exclua do banco de dados os atores com o nome de "MATTHEW".
+R: 
+DELETE FROM sakila.film_actor
+WHERE actor_id IN (8, 103, 181);
+
+DELETE FROM sakila.actor
+WHERE first_name = 'MATTHEW';
+
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+3 - Exclua da tabela film_text todos os registros que possuem a palavra "saga" em suas descrições.
+R: DELETE FROM sakila.film_text
+WHERE description LIKE '%saga%';
+
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+4 - Apague da maneira mais performática possível todos os registros das tabelas film_actor e film_category .
+R: TRUNCATE sakila.film_actor;
+TRUNCATE sakila.film_category;
+
