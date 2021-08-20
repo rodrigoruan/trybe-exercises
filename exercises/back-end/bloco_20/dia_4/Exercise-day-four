@@ -13,3 +13,8 @@ VALUES ('Carlos', 'Alberto', 5, 'cazalbe@gmail.com',
 1, 'Carlin', '54321'),
 ('Silvio', 'Santos', 5, 'silvinho@gmail.com',
 1, 'silvioSBT', '8974');
+
+3 - Selecione os cinco primeiros nomes e sobrenomes da tabela sakila.customer e cadastre essas pessoas como atores na tabela sakila.actor .
+R: INSERT INTO sakila.actor (first_name, last_name)
+	SELECT first_name, last_name
+	FROM sakila.customer LIMIT 5;
