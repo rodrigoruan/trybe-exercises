@@ -77,3 +77,4 @@ WHERE description LIKE '%saga%';
 4 - Apague da maneira mais performática possível todos os registros das tabelas film_actor e film_category .
 R: TRUNCATE sakila.film_actor;
 TRUNCATE sakila.film_category;
+
