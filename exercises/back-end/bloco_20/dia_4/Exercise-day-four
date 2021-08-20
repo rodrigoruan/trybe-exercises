@@ -18,3 +18,9 @@ VALUES ('Carlos', 'Alberto', 5, 'cazalbe@gmail.com',
 R: INSERT INTO sakila.actor (first_name, last_name)
 	SELECT first_name, last_name
 	FROM sakila.customer LIMIT 5;
+
+4 - Cadastre três categorias de uma vez só na tabela sakila.category .
+R: INSERT INTO sakila.category (name)
+VALUES ('rodrigo'),
+('ruan'),
+('souza'); "CRIATIVIDADE BATEU ALTO NESSE kkkkk"
