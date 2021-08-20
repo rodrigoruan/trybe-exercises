@@ -49,3 +49,10 @@ WHERE movie_id IN (2, 9);
 
 DELETE FROM Pixar.Movies
 WHERE id IN (2, 9);
+
+Exercícios de fixação - Bônus:
+
+8 - Altere a classificação da tabela BoxOffice para 9.0 de todos os filmes que lucraram mais de 400 milhões no mercado interno.
+R: UPDATE Pixar.BoxOffice
+SET rating = 9.0
+WHERE domestic_sales > 400000000;
