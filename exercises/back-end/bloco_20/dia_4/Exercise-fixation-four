@@ -42,3 +42,10 @@ WHERE movie_id = 11;
 
 DELETE FROM Pixar.Movies
 WHERE id = 11;
+
+7 - Exclua da tabela Movies todos os filmes dirigidos por "Andrew Staton".
+R: DELETE FROM Pixar.BoxOffice
+WHERE movie_id IN (2, 9);
+
+DELETE FROM Pixar.Movies
+WHERE id IN (2, 9);
