@@ -28,3 +28,10 @@ VALUES ('rodrigo'),
 5 - Cadastre uma nova loja na tabela sakila.store .
 R: INSERT INTO sakila.store (manager_staff_id, address_id)
 VALUES (3, 3);
+
+Exercícios práticos - parte 2:
+
+1 - Atualize o primeiro nome de todas as pessoas da tabela sakila.actor que possuem o primeiro nome "JULIA" para "JULES".
+R: UPDATE sakila.actor
+SET first_name = 'JULES'
+WHERE first_name = 'JULIA';
