@@ -24,3 +24,7 @@ R: INSERT INTO sakila.category (name)
 VALUES ('rodrigo'),
 ('ruan'),
 ('souza'); "CRIATIVIDADE BATEU ALTO NESSE kkkkk"
+
+5 - Cadastre uma nova loja na tabela sakila.store .
+R: INSERT INTO sakila.store (manager_staff_id, address_id)
+VALUES (3, 3);
