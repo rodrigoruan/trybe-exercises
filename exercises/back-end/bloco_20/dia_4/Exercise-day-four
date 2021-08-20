@@ -54,4 +54,8 @@ SET replacement_cost = (
 	IF(length BETWEEN 0 AND 100, 10.00, 20.00)
 );
 
+Exercícios práticos - parte 3:
 
+1 - Exclua do banco de dados o ator com o nome de "KARL".
+R: DELETE FROM sakila.film_actor
+WHERE actor_id = 12;
