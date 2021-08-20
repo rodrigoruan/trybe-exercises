@@ -40,3 +40,10 @@ WHERE first_name = 'JULIA';
 R: UPDATE sakila.category
 SET name = 'Science Fiction'
 WHERE name = 'Sci-Fi';
+
+3 - Atualize o valor do aluguel para $25 de todos os filmes com duração maior que 100 minutos e que possuem a classificações "G" , "PG" ou "PG-13" e um custo de substituição maior que $20.
+R: UPDATE sakila.film
+SET replacement_cost = 25.00
+WHERE length > 100 
+AND rating IN ('G', 'PG', 'PG-13')
+AND replacement_cost > 20;
