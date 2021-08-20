@@ -57,5 +57,15 @@ SET replacement_cost = (
 Exercícios práticos - parte 3:
 
 1 - Exclua do banco de dados o ator com o nome de "KARL".
-R: DELETE FROM sakila.film_actor
+DELETE FROM sakila.film_actor
 WHERE actor_id = 12;
+
+DELETE FROM sakila.actor
+WHERE first_name = 'KARL';
+
+2 - Exclua do banco de dados os atores com o nome de "MATTHEW".
+R: DELETE FROM sakila.film_actor
+WHERE actor_id IN (8, 103, 181);
+
+DELETE FROM sakila.actor
+WHERE first_name = 'MATTHEW';
