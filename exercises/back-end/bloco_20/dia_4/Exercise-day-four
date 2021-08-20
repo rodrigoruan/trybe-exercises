@@ -5,3 +5,11 @@ R: INSERT INTO sakila.staff (first_name, last_name, address_id,
 email, store_id, username, `password`)
 VALUES ('Rodrigo', 'Souza', 5, 'rodrigopython16@gmail.com',
 1, 'rodrigoregex', '12345678');
+
+2 - Insira dois funcionários novos em apenas uma query .
+R: INSERT INTO sakila.staff (first_name, last_name, address_id,
+email, store_id, username, `password`)
+VALUES ('Carlos', 'Alberto', 5, 'cazalbe@gmail.com',
+1, 'Carlin', '54321'),
+('Silvio', 'Santos', 5, 'silvinho@gmail.com',
+1, 'silvioSBT', '8974');
