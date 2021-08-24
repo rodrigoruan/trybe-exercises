@@ -1,0 +1,3 @@
+Exercícios de fixação:
+1 - Escreva uma query que exiba o maior salário da tabela.
+R: SELECT MAX(SALARY) FROM hr.employees;
