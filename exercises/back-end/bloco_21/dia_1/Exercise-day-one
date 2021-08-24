@@ -1,0 +1,5 @@
+Exercicios práticos - parte 1:
+1 - Faça uma query que exiba a palavra 'trybe' em CAIXA ALTA.
+R: SELECT UCASE('trybe');
+
+
