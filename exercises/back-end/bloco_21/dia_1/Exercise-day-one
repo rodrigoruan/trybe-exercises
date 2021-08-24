@@ -62,3 +62,6 @@ R: SELECT FLOOR(39.494)
 
 4 - Temos uma taxa de inscrição de 85.234% no curso de fotografia para iniciantes. Qual é o valor aproximado para cima dessa média?
 R: SELECT CEIL(85.234)
+-------------------------------------------------------
+1 - Monte uma query que exiba a diferença de dias entre '2030-01-20' e hoje.
+R: SELECT DATEDIFF('2030-01-20', CURRENT_DATE())
