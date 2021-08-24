@@ -1,3 +1,6 @@
 Exercícios de fixação:
 1 - Escreva uma query que exiba o maior salário da tabela.
 R: SELECT MAX(SALARY) FROM hr.employees;
+
+2 - Escreva uma query que exiba a diferença entre o maior e o menor salário.
+R: SELECT MAX(SALARY) - MIN(SALARY) FROM hr.employees;
