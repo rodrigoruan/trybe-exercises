@@ -101,3 +101,8 @@ GROUP BY store_id, active;
 R: SELECT rating, AVG(rental_duration) AS average FROM sakila.film
 GROUP BY rating
 ORDER BY average DESC;
+
+4 - Monte uma query para a tabela sakila.address que exiba o nome do distrito e a quantidade de endereços registrados nele. Os resultados devem ser ordenados da maior quantidade para a menor.
+R: SELECT district, COUNT(address) AS address_quantity FROM sakila.address
+GROUP BY district
+ORDER BY address_quantity DESC;
