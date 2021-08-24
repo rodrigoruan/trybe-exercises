@@ -85,3 +85,10 @@ R: SELECT SUM(length) AS 'Tempo de Exibição Total' FROM sakila.film;
 
 5 - E finalmente, a quantidade total de filmes cadastrados na tabela sakila.film como 'Filmes Registrados'.
 R: SELECT COUNT(*) AS 'Filmes Registrados' FROM sakila.film;
+-------------------------------------------------------
+Exercicios práticos - parte 7:
+1 - Monte uma query que exiba a quantidade de clientes cadastrados na tabela sakila.customer que estão ativos e a quantidade que estão inativos.
+R: SELECT IF(active, 'Ativo', 'Inativo') AS 'Cliente Ativo?', 
+	COUNT(*)
+	FROM sakila.customer
+GROUP BY active;
