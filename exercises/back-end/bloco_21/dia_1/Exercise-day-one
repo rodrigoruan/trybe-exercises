@@ -53,3 +53,6 @@ R: SELECT 220 MOD 12;
 Exercicios práticos - parte 4:
 1 - Monte uma query que gere um valor entre 15 e 20 .
 R: SELECT ROUND(15 + (RAND() * 5))
+
+2 - Monte uma query que exiba o valor arredondado de 15.7515971 com uma precisão de 5 casas decimais.
+R: SELECT ROUND(15.7515971, 5)
