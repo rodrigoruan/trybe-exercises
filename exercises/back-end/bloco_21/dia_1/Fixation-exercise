@@ -79,3 +79,9 @@ R: SELECT UCASE(CONCAT(FIRST_NAME, ' ', LAST_NAME)) AS UCASE_NAMES FROM hr.emplo
 17 - Escreva uma query que exiba o sobrenome e a data de contratação de todos os funcionário contratados em julho de 1987.
 R: SELECT LAST_NAME, HIRE_DATE FROM hr.employees
 WHERE YEAR(HIRE_DATE) = 1987;
+
+18 - Escreva uma query que exiba as seguintes informações de cada funcionário: nome , sobrenome , tempo que trabalha na empresa (em dias) .
+R: SELECT 	FIRST_NAME AS PRIMEIRO_NOME,
+		LAST_NAME AS SOBRENOME,
+        DATEDIFF(NOW(), HIRE_DATE)
+FROM hr.employees;
