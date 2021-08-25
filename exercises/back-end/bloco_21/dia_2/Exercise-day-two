@@ -53,3 +53,9 @@ ON A.actor_id = Fact.actor_id
 INNER JOIN sakila.film AS F
 ON F.film_id = Fact.film_id;
 
+Exercícios práticos - parte 2:
+
+1 - Queremos saber os ids e custos de substituição dos filmes que possuem o mesmo custo de substituição.
+R: SELECT t1.title, t1.replacement_cost, t2.title, t2.replacement_cost
+FROM sakila.film AS t1, sakila.film AS t2
+WHERE t1.replacement_cost = t2.replacement_cost;
