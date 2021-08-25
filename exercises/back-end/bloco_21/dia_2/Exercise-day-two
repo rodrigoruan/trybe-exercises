@@ -93,3 +93,10 @@ UNION ALL
 (SELECT first_name, last_name FROM sakila.customer LIMIT 60)
 ORDER BY first_name
 LIMIT 15 OFFSET 45;
+
+Exercícios práticos - parte 4:
+R: SELECT Id, Title FROM hotel.Books AS H
+WHERE NOT EXISTS (
+	SELECT * FROM hotel.Books_Lent
+    WHERE H.id = book_id
+);
