@@ -108,3 +108,10 @@ WHERE EXISTS (
 	SELECT * FROM hotel.Books_Lent
     WHERE H.id = book_id
 ) AND Title LIKE '%lost%';
+
+3 - Usando a tabela carsales e customers , exiba apenas o nome dos clientes que ainda não compraram um carro.
+R: SELECT Name FROM hotel.Customers AS C
+WHERE NOT EXISTS (
+	SELECT * FROM hotel.CarSales
+    WHERE CustomerID = C.CustomerId
+);
