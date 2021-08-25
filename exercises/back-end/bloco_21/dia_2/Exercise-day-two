@@ -95,8 +95,16 @@ ORDER BY first_name
 LIMIT 15 OFFSET 45;
 
 Exercícios práticos - parte 4:
+1 - Usando o EXISTS na tabela books_lent e books , exiba o id e título dos livros que ainda não foram emprestados.
 R: SELECT Id, Title FROM hotel.Books AS H
 WHERE NOT EXISTS (
 	SELECT * FROM hotel.Books_Lent
     WHERE H.id = book_id
 );
+
+2 - Usando o EXISTS na tabela books_lent e books , exiba o id e título dos livros estão atualmente emprestados e que contêm a palavra "lost" no título.
+R: SELECT Id, Title FROM hotel.Books AS H
+WHERE EXISTS (
+	SELECT * FROM hotel.Books_Lent
+    WHERE H.id = book_id
+) AND Title LIKE '%lost%';
