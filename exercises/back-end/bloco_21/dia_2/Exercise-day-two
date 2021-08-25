@@ -65,3 +65,16 @@ R: SELECT t1.title, t1.length, t2.title, t2.length
 FROM sakila.film AS t1, sakila.film AS t2
 WHERE t1.replacement_cost = t2.replacement_cost
 AND t1.rental_duration IN(2, 3, 4);
+
+Exercícios práticos - parte 3:
+
+1 - Todos os funcionários foram promovidos a atores. Monte uma query que exiba a união da tabela staff com a tabela actor , exibindo apenas o nome e o sobrenome . Seu resultado não deve excluir nenhum funcionário ao unir as tabelas.
+R: SELECT first_name, last_name FROM sakila.staff
+UNION ALL
+SELECT first_name, last_name FROM sakila.actor;
+
+2 - Monte uma query que una os resultados das tabelas customer e actor , exibindo os nomes que contêm a palavra "tracy" na tabela customer e os que contêm "je" na tabela actor . Exiba apenas os resultados únicos.
+R: SELECT first_name FROM sakila.customer WHERE first_name LIKE '%tracy%'
+UNION
+SELECT first_name FROM sakila.actor AS A
+WHERE A.first_name LIKE '%je%';
