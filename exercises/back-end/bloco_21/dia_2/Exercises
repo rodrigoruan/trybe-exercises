@@ -48,3 +48,11 @@ INNER JOIN sakila.payment AS P ON S.staff_id = P.staff_id
 WHERE YEAR(P.payment_date) = 2006
 GROUP BY S.staff_id;
 
+7 - Monte uma query que exiba o id do ator , nome , id do filme e título do filme , usando as tabelas actor , film_actor e film . Dica: você precisará fazer mais de um JOIN na mesma query .
+R: SELECT
+	A.actor_id, A.first_name, FA.film_id, F.title
+FROM sakila.actor AS A
+INNER JOIN sakila.film_actor AS FA ON FA.actor_id = A.actor_id
+INNER JOIN sakila.film AS F ON FA.film_id = F.film_id;
+
+
