@@ -98,7 +98,7 @@ UNION
 ORDER BY first_name ASC, last_name ASC
 LIMIT 15 OFFSET 45;
 
-Exercícios de fixação parte - 3
+Exercícios de fixação parte - 4
 1 - Usando o EXISTS na tabela books_lent e books , exiba o id e título dos livros que ainda não foram emprestados.
 R: SELECT Id, Title FROM hotel.Books AS B
 WHERE NOT EXISTS (
@@ -113,3 +113,4 @@ WHERE EXISTS (
     WHERE B.Id = BL.book_id
     HAVING B.Title LIKE '%lost%'
 );
+
