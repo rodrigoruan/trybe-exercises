@@ -61,3 +61,10 @@ WHERE (
     AND M.year > 2009
 );
 
+8 - Utilizando o EXISTS , selecione o nome e localização dos cinemas que possuem filmes em cartaz.
+R: SELECT T.name, T.location FROM Pixar.Theater AS T
+WHERE EXISTS (
+	SELECT * FROM Pixar.Movies AS M
+    WHERE M.theater_id = T.id
+);
+
