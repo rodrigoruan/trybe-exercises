@@ -42,3 +42,10 @@ R: SELECT M.title FROM Pixar.Movies AS M
 INNER JOIN Pixar.BoxOffice AS B ON M.id = B.movie_id
 WHERE B.rating > 7.5;
 
+R: SELECT M.title FROM Pixar.Movies AS M
+WHERE (
+	SELECT movie_id FROM Pixar.BoxOffice
+    WHERE M.id = movie_id
+    AND rating > 7.5
+);
+
