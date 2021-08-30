@@ -14,3 +14,12 @@ R: SELECT
 FROM sakila.staff AS S
 INNER JOIN sakila.address AS A ON S.address_id = A.address_id;
 
+3 - Exiba o id do cliente , nome e email dos primeiros 100 clientes, ordenados pelo nome em ordem decrescente, juntamente com o id do endereço e o nome da rua onde o cliente mora. Essas informações podem ser encontradas nas tabelas customer e address .
+R: SELECT 
+	C.customer_id, C.first_name, C.email, A.address_id, A.address
+FROM sakila.customer AS C
+INNER JOIN sakila.address AS A ON A.address_id = C.address_id
+ORDER BY C.first_name DESC
+LIMIT 100;
+
+
