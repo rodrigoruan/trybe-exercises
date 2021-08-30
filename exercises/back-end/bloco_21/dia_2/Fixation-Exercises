@@ -15,3 +15,11 @@ R: SELECT
 FROM Pixar.BoxOffice AS B
 INNER JOIN Pixar.Movies AS M ON B.movie_id = M.id
 HAVING `Vendas internacionais` > `Vendas nacionais`;
+
+3 - Utilizando o INNER JOIN , faça uma busca que retorne os filmes e sua avaliação ( rating ) em ordem decrescente.
+R: SELECT
+	M.title AS 'Filme', 
+    B.rating AS 'Avaliação'
+FROM Pixar.Movies AS M
+INNER JOIN Pixar.BoxOffice AS B ON M.id = B.movie_id
+ORDER BY `Avaliação` DESC;
