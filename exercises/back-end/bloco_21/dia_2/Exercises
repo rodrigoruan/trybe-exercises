@@ -29,3 +29,21 @@ FROM sakila.customer AS C
 INNER JOIN sakila.address AS A ON C.address_id = A.address_id
 WHERE A.district = 'California'
 	AND C.first_name LIKE '%rene%';
+
+5 - Exiba o nome e a quantidade de endereços dos clientes cadastrados. Ordene seus resultados por nomes de forma decrescente. Exiba somente os clientes ativos. As informações podem ser encontradas na tabela address e customer .
+R: SELECT 
+	C.first_name, COUNT(A.address)
+FROM sakila.customer AS C
+INNER JOIN sakila.address AS A
+ON C.address_id = A.address_id
+WHERE C.active = 1
+GROUP BY C.first_name
+ORDER BY C.first_name DESC; 
+
+6 - Monte uma query que exiba o nome , sobrenome e a média de valor ( amount ) paga aos funcionários no ano de 2006. Use as tabelas payment e staff . Os resultados devem estar agrupados pelo nome e sobrenome do funcionário.
+R: SELECT 
+	S.first_name, S.last_name, AVG(P.amount)
+FROM sakila.staff AS S
+INNER JOIN sakila.payment AS P ON S.staff_id = P.staff_id
+WHERE YEAR(P.payment_date) = 2006
+GROUP BY S.staff_id;
