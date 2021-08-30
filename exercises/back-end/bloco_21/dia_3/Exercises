@@ -59,3 +59,19 @@ BEGIN
 END $$
 
 DELIMITER ;
+
+2 - Crie uma function que, dado o parâmetro de entrada inventory_id , retorna o nome do filme vinculado ao registro de inventário com esse id.
+R: USE sakila;
+DELIMITER $$
+
+CREATE FUNCTION getMovieByInventoryId(id INT)
+RETURNS VARCHAR(100) READS SQL DATA
+BEGIN
+	DECLARE movie_name VARCHAR(100);
+    SELECT F.title FROM sakila.film AS F
+    INNER JOIN sakila.inventory AS I ON F.film_id = I.film_id
+    WHERE I.inventory_id = id INTO movie_name;
+    RETURN movie_name;
+END $$
+
+DELIMITER ;
