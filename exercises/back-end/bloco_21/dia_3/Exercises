@@ -43,5 +43,19 @@ END $$
 
 DELIMITER ;
 
+Exercicios parte 2
+1 - Utilizando a tabela sakila.payment , monte uma function que retorna a quantidade total de pagamentos feitos até o momento por um determinado customer_id .
+R: USE sakila;
+DELIMITER $$
 
+CREATE FUNCTION GetTotalPaymentsById(id INT)
+RETURNS INT READS SQL DATA
+BEGIN
+	DECLARE totalPayment INT;
+    SELECT COUNT(*)
+    FROM sakila.payment AS P
+    WHERE P.customer_id = id INTO totalPayment;
+    RETURN totalPayment;
+END $$
 
+DELIMITER ;
