@@ -7,3 +7,11 @@ R: SELECT
 FROM Pixar.BoxOffice AS B
 INNER JOIN Pixar.Movies AS M ON M.id = B.movie_id;
 
+2 - Utilizando o INNER JOIN , faça uma busca que retorne o número de vendas para cada filme que possui um número maior de vendas internacionais ( international_sales ) do que vendas nacionais ( domestic_sales ).
+R: SELECT
+	M.title AS 'Filme',
+    B.domestic_sales AS 'Vendas nacionais',
+    B.international_sales AS 'Vendas internacionais'
+FROM Pixar.BoxOffice AS B
+INNER JOIN Pixar.Movies AS M ON B.movie_id = M.id
+HAVING `Vendas internacionais` > `Vendas nacionais`;
