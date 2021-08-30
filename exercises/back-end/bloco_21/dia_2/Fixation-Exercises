@@ -1,0 +1,9 @@
+Exercícios de fixação
+1 - Utilizando o INNER JOIN , encontre as vendas nacionais ( domestic_sales ) e internacionais ( international_sales ) de cada filme.
+R: SELECT 
+	M.title AS 'Filme',
+	B.domestic_sales AS 'Vendas nacionais',
+    B.international_sales AS 'Vendas internacionais'
+FROM Pixar.BoxOffice AS B
+INNER JOIN Pixar.Movies AS M ON M.id = B.movie_id;
+
