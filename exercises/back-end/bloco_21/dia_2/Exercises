@@ -121,4 +121,12 @@ WHERE NOT EXISTS (
     WHERE C.CustomerId = Car.CustomerID
 );
 
+4 - Usando o comando EXISTS em conjunto com JOIN e as tabelas cars , customers e carsales , exiba o nome do cliente e o modelo do carro de todos os clientes que fizeram compras de carros.
+R: SELECT Cust.Name, Car.Name FROM hotel.Customers AS Cust
+INNER JOIN hotel.Cars AS Car
+WHERE EXISTS (
+	SELECT * FROM hotel.CarSales
+    WHERE Cust.CustomerId = CustomerId
+    AND carID = Car.Id
+);
 
