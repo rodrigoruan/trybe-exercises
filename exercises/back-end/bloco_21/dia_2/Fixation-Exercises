@@ -102,4 +102,9 @@ INNER JOIN Pixar.BoxOffice AS B ON M.id = B.movie_id
 WHERE B.international_sales >= 500000000
 AND M.length_minutes > 110;
 
-
+R: SELECT M.title FROM Pixar.Movies AS M
+WHERE M.id IN (
+	SELECT B.movie_id FROM Pixar.BoxOffice AS B
+    WHERE B.international_sales >= 500000000
+		AND M.length_minutes > 110
+);
