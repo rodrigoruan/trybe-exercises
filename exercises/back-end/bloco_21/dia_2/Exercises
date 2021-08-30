@@ -22,4 +22,10 @@ INNER JOIN sakila.address AS A ON A.address_id = C.address_id
 ORDER BY C.first_name DESC
 LIMIT 100;
 
-
+4 - Exiba o nome , email , id do endereço , endereço e distrito dos clientes que moram no distrito da California e que contêm "rene" em seus nomes. As informações podem ser encontradas nas tabelas address e customer .
+R: SELECT 
+	C.first_name, C.email, C.address_id, A.address, A.district
+FROM sakila.customer AS C
+INNER JOIN sakila.address AS A ON C.address_id = A.address_id
+WHERE A.district = 'California'
+	AND C.first_name LIKE '%rene%';
