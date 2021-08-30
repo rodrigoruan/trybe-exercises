@@ -68,3 +68,9 @@ WHERE EXISTS (
     WHERE M.theater_id = T.id
 );
 
+9 - Utilizando o EXISTS , selecione o nome e localização dos cinemas que não possuem filmes em cartaz.
+R: SELECT T.name, T.location FROM Pixar.Theater AS T
+WHERE NOT EXISTS (
+	SELECT * FROM Pixar.Movies AS M
+    WHERE M.theater_id = T.id
+);
