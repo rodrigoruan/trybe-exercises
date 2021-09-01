@@ -1,0 +1,138 @@
+Exercicios parte 1
+1 - Monte uma procedure que exiba os 10 atores mais populares, baseado em sua quantidade de filmes. Essa procedure não deve receber parâmetros de entrada ou saída e, quando chamada, deve exibir o id do ator ou atriz e a quantidade de filmes em que atuaram.
+R: USE sakila;
+DELIMITER $$
+
+CREATE PROCEDURE ShowTenMostFamousActors()
+BEGIN
+	SELECT 
+		actor_id AS 'Actor Id',
+		COUNT(*) AS 'Total participations in Movies'
+	FROM sakila.film_actor
+    GROUP BY actor_id
+    LIMIT 10;
+END $$
+
+DELIMITER ;
+
+2 - Monte uma procedure que receba como parâmetro de entrada o nome da categoria desejada em uma string e que exiba o id do filme , seu titulo , o id de sua categoria e o nome da categoria selecionada. Use as tabelas film , film_category e category para montar essa procedure.
+R: USE sakila;
+DELIMITER $$
+
+CREATE PROCEDURE showMoviesInCategory(IN movieCategory VARCHAR(200))
+BEGIN
+	SELECT F.film_id, F.title, FC.category_id, C.name FROM sakila.film AS F
+    INNER JOIN sakila.film_category AS FC ON FC.film_id = F.film_id
+	INNER JOIN sakila.category AS C ON C.category_id = FC.category_id
+    WHERE C.name = 'Action';
+END $$
+
+DELIMITER ;
+
+3 - Monte uma procedure que receba o email de um cliente como parâmetro de entrada e diga se o cliente está ou não ativo, através de um parâmetro de saída.
+R: USE sakila;
+DELIMITER $$
+
+CREATE PROCEDURE verifyIfCustomerIsActive(IN customerEmail VARCHAR(200),  OUT customerResult VARCHAR(50))
+BEGIN
+	SELECT
+		IF(active=0, 'Cliente inativo', 'Cliente ativo')
+	FROM sakila.customer
+	WHERE email = customerEmail INTO customerResult;
+END $$
+
+DELIMITER ;
+
+Exercicios parte 2
+1 - Utilizando a tabela sakila.payment , monte uma function que retorna a quantidade total de pagamentos feitos até o momento por um determinado customer_id .
+R: USE sakila;
+DELIMITER $$
+
+CREATE FUNCTION GetTotalPaymentsById(id INT)
+RETURNS INT READS SQL DATA
+BEGIN
+	DECLARE totalPayment INT;
+    SELECT COUNT(*)
+    FROM sakila.payment AS P
+    WHERE P.customer_id = id INTO totalPayment;
+    RETURN totalPayment;
+END $$
+
+DELIMITER ;
+
+2 - Crie uma function que, dado o parâmetro de entrada inventory_id , retorna o nome do filme vinculado ao registro de inventário com esse id.
+R: USE sakila;
+DELIMITER $$
+
+CREATE FUNCTION getMovieByInventoryId(id INT)
+RETURNS VARCHAR(100) READS SQL DATA
+BEGIN
+	DECLARE movie_name VARCHAR(100);
+    SELECT F.title FROM sakila.film AS F
+    INNER JOIN sakila.inventory AS I ON F.film_id = I.film_id
+    WHERE I.inventory_id = id INTO movie_name;
+    RETURN movie_name;
+END $$
+
+DELIMITER ;
+
+3 - Crie uma function que receba uma determinada categoria de filme em formato de texto (ex: 'Action' , 'Horror' ) e retorna a quantidade total de filmes registrados nessa categoria.
+R: USE sakila;
+DELIMITER $$
+
+CREATE FUNCTION getTotalMoviesByCategorie(MovieCategory VARCHAR(50))
+RETURNS INT READS SQL DATA
+BEGIN
+	DECLARE total_movies INT;
+    SELECT COUNT(*) FROM sakila.film_category AS FC
+    INNER JOIN sakila.category AS C ON C.category_id = FC.category_id
+    WHERE MovieCategory = C.name INTO total_movies;
+    RETURN total_movies;
+END $$
+
+DELIMITER ;
+
+Exercicios parte 3
+
+1 - Crie um TRIGGER que, a cada nova inserção feita na tabela carros , defina o valor da coluna data_atualizacao para o momento do ocorrido, a acao para 'INSERÇÃO' e a coluna disponivel_em_estoque para 1 .
+R: USE betrybe_automoveis;
+
+DELIMITER $$
+CREATE TRIGGER trigger_add_car
+	BEFORE INSERT ON carros
+    FOR EACH ROW
+BEGIN
+	SET NEW.data_atualizacao = NOW(),
+    NEW.acao = 'INSERÇÃO',
+    NEW.disponivel_em_estoque = 1;
+END $$
+
+DELIMITER ;
+
+2 - Crie um TRIGGER que, a cada atualização feita na tabela carros , defina o valor da coluna data_atualizacao para o momento do ocorrido e a acao para 'ATUALIZAÇÃO' .
+R: USE betrybe_automoveis;
+
+DELIMITER $$
+CREATE TRIGGER trigger_update_car
+	BEFORE UPDATE ON carros
+    FOR EACH ROW
+BEGIN
+	SET NEW.data_atualizacao = NOW(),
+    NEW.acao = 'ATUALIZAÇÃO';
+END $$
+
+DELIMITER ;
+
+3 - Crie um TRIGGER que, a cada exclusão feita na tabela carros , envie para a tabela log_operacoes as informações do tipo_operacao como 'EXCLUSÃO' e a data_ocorrido como o momento da operação.
+R: USE betrybe_automoveis;
+
+DELIMITER $$
+CREATE TRIGGER trigger_update_car
+	BEFORE DELETE ON carros
+    FOR EACH ROW
+BEGIN
+	INSERT INTO log_operacoes(tipo_operacao, data_ocorrido)
+    VALUES ('EXCLUSÃO', NOW());
+END $$
+
+DELIMITER ;
