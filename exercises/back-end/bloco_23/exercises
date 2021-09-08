@@ -15,3 +15,7 @@ R: db.bios.find({ "name.first": "John"}, {_id: 0}).pretty()
 5 - Retorne os 3 primeiros documentos da coleção bios utilizando o método pretty() .
 R: db.bios.find().limit(3).pretty()
 
+6 - Retorne 2 documentos da coleção bios pulando os 5 primeiros documentos
+R: db.bios.find().limit(2).skip(5)
+
+
