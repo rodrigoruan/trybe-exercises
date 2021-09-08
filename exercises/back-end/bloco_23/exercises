@@ -24,4 +24,6 @@ R: db.bios.count()
 8 - Conte quantos livros existem com o status = "PUBLISH"
 R: b.bios.find({"status": "PUBLISH"}).count()
 
+9 - Exiba os atributos title , isbn e pageCount dos 3 primeiros livros. NÃO retorne o atributo _id
+R: db.bios.find({},{title: 1, isbn: 1, pageCount: 1, _id: 0}).limit(3)
 
