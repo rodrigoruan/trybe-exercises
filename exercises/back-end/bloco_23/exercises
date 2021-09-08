@@ -21,4 +21,7 @@ R: db.bios.find().limit(2).skip(5)
 7 - Retorne a quantidade de documentos da coleção books
 R: db.bios.count()
 
+8 - Conte quantos livros existem com o status = "PUBLISH"
+R: b.bios.find({"status": "PUBLISH"}).count()
+
 
