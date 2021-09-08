@@ -1,0 +1,5 @@
+Exercícios de fixação.
+
+1 - Retorne o documento com o _id igual a 8.
+R: db.bios.find({_id: 8})
+
