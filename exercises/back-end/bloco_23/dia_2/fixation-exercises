@@ -37,3 +37,6 @@ R: db.restaurants.find().sort({name: 1})
 2 - Ordene os restaurantes de forma descrescente baseado nas avaliações.
 R: db.restaurants.find().sort({rating: -1})
 
+Exercícios de fixação - parte 3
+1 - Remova o primeiro restaurante que possua culinária do tipo Ice Cream, Gelato, Yogurt, Ices .
+R: db.restaurants.deleteOne({cuisine: "Ice Cream, Gelato, Yogurt, Ices"})
