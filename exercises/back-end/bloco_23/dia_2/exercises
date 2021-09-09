@@ -20,3 +20,5 @@ R: db.superheroes.find({"aspects.height": {$gte: 200}}).count();
 7 - Selecione todos os super-heróis que têm olhos verdes
 R: db.superheroes.find({"aspects.eyeColor": "green"})
 
+8 - Retorne o total de super-heróis com olhos azuis
+R: db.superheroes.find({"aspects.eyeColor": "blue"}).count()
