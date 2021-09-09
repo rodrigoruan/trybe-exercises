@@ -30,3 +30,7 @@ R: db.restaurants.find({$and: [{rating: {$ne: 1}}, {cuisine: {$ne: "American"}}]
 5 - Selecione e faça a contagem dos resturantes em que a avaliação seja maior que 6 ou menor que 10 , E esteja localizado no bairro Brooklyn , OU não possuem culinária do tipo Delicatessen .
 R: db.restaurants.find({$and: [{rating: {$gt: 6, $lt: 10}}, {$or: [{borough: "Brooklyn"}, {cuisine: {$ne: "Delicatessen"}}]}]}).count()
 
+Exercícios de fixação - parte 3
+1 - Ordene alfabeticamente os restaurantes pelo nome (atributo name ).
+R: db.restaurants.find().sort({name: 1})
+
