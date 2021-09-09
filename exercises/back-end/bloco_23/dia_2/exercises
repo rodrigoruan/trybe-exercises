@@ -32,4 +32,6 @@ R: db.superheroes.find({"aspects.hairColor": {$in: ['No Hair', 'black']}}).count
 11 - Retorne o total de super-heróis que não tenham cabelos pretos ou não sejam carecas
 R: db.superheroes.find({"aspects.hairColor": {$nin: ['No Hair', 'black']}}).count()
 
+12 - Utilizando o operador $not , retorne o total de super-heróis que não tenham mais de 1.80m de altura.
+R: db.superheroes.find({"aspects.height": {$not: {$gt: 180}}}).count()
 
