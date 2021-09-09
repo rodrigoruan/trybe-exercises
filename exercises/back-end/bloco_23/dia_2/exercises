@@ -35,3 +35,7 @@ R: db.superheroes.find({"aspects.hairColor": {$nin: ['No Hair', 'black']}}).coun
 12 - Utilizando o operador $not , retorne o total de super-heróis que não tenham mais de 1.80m de altura.
 R: db.superheroes.find({"aspects.height": {$not: {$gt: 180}}}).count()
 
+13 - Selecione todos os super-heróis que não sejam humanos nem sejam maiores do que 1.80m
+R: db.superheroes.find({$and: [{race: {$ne: "Human"}}, {"aspects.height": {$lte: 180}}]})
+
+
