@@ -1,0 +1,59 @@
+Practical Exercises
+1 - Inspecione um documento para que você se familiarize com a estrutura. Entenda os atributos e os níveis existentes.
+R: db.superheroes.find().limit(1).pretty()
+
+2 - Selecione todos os super-heróis com menos de 1.80m de altura. Lembre-se de que essa informação está em centímetros.
+R: db.superheroes.find({"aspects.height": {$lt: 180}});
+
+3 - Retorne o total de super-heróis menores que 1.80m.
+R: db.superheroes.find({"aspects.height": {$lt: 180}}).count();
+
+4 - Retorne o total de super-heróis com até 1.80m
+R: db.superheroes.find({"aspects.height": {$lte: 180}}).count();
+
+5 - Selecione um super-herói com 2.00m ou mais de altura.
+R: db.superheroes.find({"aspects.height": {$gte: 200}}).limit(1).pretty();
+
+6 - Retorne o total de super-heróis com 2.00m ou mais.
+R: db.superheroes.find({"aspects.height": {$gte: 200}}).count();
+
+7 - Selecione todos os super-heróis que têm olhos verdes
+R: db.superheroes.find({"aspects.eyeColor": "green"})
+
+8 - Retorne o total de super-heróis com olhos azuis
+R: db.superheroes.find({"aspects.eyeColor": "blue"}).count()
+
+9 - Utilizando o operador $in , selecione todos os super-heróis com cabelos pretos ou carecas ( "No Hair" )
+R: db.superheroes.find({"aspects.hairColor": {$in: ['No Hair', 'black']}})
+
+10 - Retorne o total de super-heróis com cabelos pretos ou carecas ( "No Hair" ).
+R: db.superheroes.find({"aspects.hairColor": {$in: ['No Hair', 'black']}}).count()
+
+11 - Retorne o total de super-heróis que não tenham cabelos pretos ou não sejam carecas
+R: db.superheroes.find({"aspects.hairColor": {$nin: ['No Hair', 'black']}}).count()
+
+12 - Utilizando o operador $not , retorne o total de super-heróis que não tenham mais de 1.80m de altura.
+R: db.superheroes.find({"aspects.height": {$not: {$gt: 180}}}).count()
+
+13 - Selecione todos os super-heróis que não sejam humanos nem sejam maiores do que 1.80m
+R: db.superheroes.find({$and: [{race: {$ne: "Human"}}, {"aspects.height": {$lte: 180}}]})
+
+14 - Selecione todos os super-heróis com 1.80m ou 2.00m de altura e que sejam publicados pela Marvel Comics 
+R: db.superheroes.find({$and: [{"aspects.height": {$in: [180, 200]}}, {publisher: "Marvel Comics"}]})
+
+15 - Selecione todos os super-heróis que pesem entre 80kg e 100kg , sejam Humanos ou Mutantes e não sejam publicados pela DC Comics 
+R: db.superheroes.find({$and: [{"aspects.weight": {$gte: 80, $lte: 100}}, {publisher: {$ne: 'DC Comics'}}, {race: {$in: ["Human", "Mutant"]}}]})
+
+
+16 - Retorne o total de documentos que não contêm o campo race .
+R: db.superheroes.find({race: {$exists: false}}).count()
+
+17 - Retorne o total de documentos que contêm o campo hairColor
+R: db.superheroes.find({"aspects.hairColor": {$exists: true}}).count()
+
+18 - Remova apenas um documento publicado pela Sony Pictures
+R: db.superheroes.deleteOne({publisher: "Sony Pictures"})
+
+19 - Remova todos os documentos publicados pelo George Lucas
+R: db.superheroes.deleteMany({publisher: "George Lucas"})
+
