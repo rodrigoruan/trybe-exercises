@@ -3,4 +3,5 @@ Practical Exercises
 R: db.superheroes.find().limit(1).pretty()
 
 2 - Selecione todos os super-heróis com menos de 1.80m de altura. Lembre-se de que essa informação está em centímetros.
-R: 
+R: db.superheroes.find({"aspects.height": {$lt: 180}});
+
