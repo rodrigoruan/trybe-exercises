@@ -50,3 +50,9 @@ R: db.superheroes.find({race: {$exists: false}}).count()
 17 - Retorne o total de documentos que contêm o campo hairColor
 R: db.superheroes.find({"aspects.hairColor": {$exists: true}}).count()
 
+18 - Remova apenas um documento publicado pela Sony Pictures
+R: db.superheroes.deleteOne({publisher: "Sony Pictures"})
+
+19 - Remova todos os documentos publicados pelo George Lucas
+R: db.superheroes.deleteMany({publisher: "George Lucas"})
+
