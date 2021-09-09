@@ -8,3 +8,6 @@ R: db.restaurants.find({cuisine: {$ne: "American"}})
 3 - Selecione e faça a contagem dos restaurantes que possuem avaliação maior ou igual a 8 . (utilizando o atributo rating )
 R: db.restaurants.find({rating: {$gte: 8}})
 
+4 - Selecione e faça a contagem dos restaurantes que possuem avaliação menor que 4 .
+R: db.restaurants.find({rating: {$lt: 4}})
+
