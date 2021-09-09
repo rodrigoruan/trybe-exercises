@@ -34,3 +34,6 @@ Exercícios de fixação - parte 3
 1 - Ordene alfabeticamente os restaurantes pelo nome (atributo name ).
 R: db.restaurants.find().sort({name: 1})
 
+2 - Ordene os restaurantes de forma descrescente baseado nas avaliações.
+R: db.restaurants.find().sort({rating: -1})
+
