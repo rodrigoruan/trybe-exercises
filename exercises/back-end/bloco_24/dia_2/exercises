@@ -26,5 +26,7 @@ Exercício 9: Adicione o campo character com o valor Marv ao array de cast em qu
 R: db.movies.updateOne({"title": "Home Alone", "cast.actor": "Daniel Stern"}, {$set: {"cast.$.character": "Marv"}})
 
 Exercício 10: Crie um array de documentos chamado cast para o filme Batman com os seguintes dados:
-R: db.movies.updateOne({"title": "Batman"}, {$push: {"cast": [{"character": "Batman"}, {"character": "Alfred"}, { "character": "Coringa"}]}})
+R: db.movies.updateOne({"title": "Batman"}, {$push: {"cast": {$each: [{"character": "Batman"}, {"character": "Alfred"}, { "character": "Coringa"}]}}})
+
+Exercicio 11: 
 
