@@ -37,3 +37,10 @@ R: db.movies.updateMany({}, {$unset: {"budget": "", "estimatedBudget": ""}})
 Exercício 13 : Para os filmes Batman ou Home Alone , atribua a imdbRating o valor 17 , caso o valor de imdbRating seja menor que 17 .
 R: db.movies.updateMany({"title": {$in: ["Batman", "Home Alone"]}}, {$max: {imdbRating: 17}})
 
+
+------------------------------------------------------------------------------
+
+Exercícios Bônus
+
+Exercício 14 : Remova o campo class dos documentos que possuem esse campo com o valor unknown .
+R: db.xmen.updateMany({"class": "unknown"}, {$unset: {"class": ""}})
