@@ -10,3 +10,5 @@ R: db.movies.updateOne({"title": "Home Alone"}, {$set: {budget: 1, imdbRating: 5
 Exercício 4 : Aumente em 2 o imdbRating do filme Batman .
 R: db.movies.updateOne({"title": "Batman"}, {$inc: {"imdbRating": 2}})
 
+Exercício 5 : Aumente em 5 o budget do filme Home Alone .
+R: db.movies.updateOne({"title": "Home Alone"}, {$inc: {"budget": 5}})
