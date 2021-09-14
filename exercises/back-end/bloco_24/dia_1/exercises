@@ -15,3 +15,9 @@ R: db.movies.updateOne({"title": "Home Alone"}, {$inc: {"budget": 5}})
 
 Exercício 6 : Multiplique por 4 o imdbRating do filme Batman .
 R: db.movies.updateOne({"title": "Batman"}, {$mul: {"imdbRating": 4}})
+
+Exercício 7 : Renomeie o campo budget para estimatedBudget do filme Batman .
+R: db.movies.updateOne({"title": "Batman"}, {$rename: {"budget": "estimateBudget"}})
+
+Exercício 8 : Utilize o operador $min para alterar o budget para 5 do filme Home Alone .
+R: db.movies.updateOne({"title": "Home Alone"}, {$min: {"budget": 5}})
