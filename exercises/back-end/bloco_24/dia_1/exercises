@@ -50,3 +50,6 @@ R: db.xmen.updateMany({}, {$rename: {"name": "hero_name", "true_name": "full_nam
 
 Exercício 16 : Produza uma query onde os mutantes class omega ou gama passam a ter seu poder de 500 somente se seu poder for menor que 500 .
 R: db.xmen.updateMany({"class": {$in: ["omega", "gama"]}}, {$max: {"power": 500}})
+
+Exercício 17 : Produza uma query onde os mutantes class gama passam a ter seu poder de 300 somente se seu poder for maior que 300 .
+R: db.xmen.updateMany({"class": "gama"}, {$min: {"power": 300}})
