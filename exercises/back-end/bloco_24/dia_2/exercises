@@ -21,3 +21,6 @@ R: db.movies.updateMany({"title": {$in: ["Batman", "Home Alone"]}}, {$push: {"ca
 
 Exercício 8: Crie um array de documentos chamado cast para o filme Home Alone com os seguintes dados:
 R: db.movies.updateOne({"title": "Home Alone"}, {$push: {"cast": [{"actor": "Macaulay Culkin",   "character": "Kevin" }, {   "actor": "Joe Pesci",   "character": "Harry" }, {   "actor": "Daniel Stern" }]}})
+
+Exercício 9: Adicione o campo character com o valor Marv ao array de cast em que o campo actor seja igual a Daniel Stern no filme Home Alone .
+R: db.movies.updateOne({"title": "Home Alone", "cast.actor": "Daniel Stern"}, {$set: {"cast.$.character": "Marv"}})
