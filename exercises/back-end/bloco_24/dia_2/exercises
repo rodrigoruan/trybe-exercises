@@ -6,3 +6,6 @@ R: db.movies.updateOne({"title": "Batman"}, {$push: {"category": {$each: ["villa
 
 Exercício 3: Remova a categoria "action" do filme Batman .
 R: db.movies.updateOne({"title": "Batman"}, {$pop: {"category": -1}})
+
+Exercício 4: Remova o primeiro elemento do array category do filme Batman .
+R: db.movies.updateOne({"title": "Batman"}, {$pop: {"category": -1}})
