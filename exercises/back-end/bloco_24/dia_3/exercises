@@ -6,3 +6,7 @@ R: db.movies.find({"category": {$in: ["action"]}, "imdbRating": {$gt: 7}})
 
 3 - Adicione um array chamado ratings ao filme Batman com os seguintes valores: [85, 100, 102, 105] . Dica: lembre-se do operador $each visto no dia anterior.
 R: db.movies.updateOne({"title": "Batman"}, {$push: {"ratings": {$each: [85, 100, 102, 105]}}})
+
+4 - Adicione um array chamado ratings ao filme Godzilla com os seguintes valores: [78, 52, 95, 102] 
+R: db.movies.updateOne({"title": "Godzilla"}, {$push: {"ratings": {$each: [78, 52, 95, 102]}}})
+
