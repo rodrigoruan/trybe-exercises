@@ -18,3 +18,6 @@ R: db.movies.find({"ratings": {$gt: 103}}, {_id: 0, title: 1, ratings: 1})
 
 7 - Retorne todos os filmes com ratings entre 100 e 105 , exibindo apenas os campos title e ratings .
 R: db.movies.find({"ratings": {$elemMatch: {$gte: 100, $lte: 105}}}, {_id: 0, title: 1, ratings: 1})
+
+8 - Retorne todos os filmes com ratings entre 64 e 105 e divisíveis por 9 , exibindo apenas os campos title e ratings .
+R: db.movies.find({"ratings": {$elemMatch: {$gte: 64, $lte: 105, $mod: [9, 0]}}}, {_id: 0, title: 1, ratings: 1})
