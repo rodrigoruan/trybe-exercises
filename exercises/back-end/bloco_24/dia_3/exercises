@@ -51,3 +51,6 @@ R: db.movies.updateOne({"title": "Home Alone"}, {$set: {"description": "An eight
 
 18 - Utilizando o operador $regex , retorne todos os filmes em que a descrição comece com a palavra "The" .
 R: db.movies.find({"description": {$regex: /^The/}})
+
+19 - Utilizando o operador $regex , retorne todos os filmes em que a descrição termine com a palavra "humanity." .
+R: db.movies.find({"description": {$regex: /humanity.$/}})
