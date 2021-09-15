@@ -48,3 +48,6 @@ R: db.movies.updateOne({"title": "Godzilla"}, {$set: {"description": "The world 
 
 17 - Adicione o campo description no filme Home Alone com o seguinte valor: "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation." .
 R: db.movies.updateOne({"title": "Home Alone"}, {$set: {"description": "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation."}})
+
+18 - Utilizando o operador $regex , retorne todos os filmes em que a descrição comece com a palavra "The" .
+R: db.movies.find({"description": {$regex: /^The/}})
