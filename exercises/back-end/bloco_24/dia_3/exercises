@@ -54,3 +54,6 @@ R: db.movies.find({"description": {$regex: /^The/}})
 
 19 - Utilizando o operador $regex , retorne todos os filmes em que a descrição termine com a palavra "humanity." .
 R: db.movies.find({"description": {$regex: /humanity.$/}})
+
+20 - Crie um índice do tipo text no campo description .
+R: db.movies.createIndex({description: "text"})
