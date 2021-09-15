@@ -12,3 +12,6 @@ R: db.movies.updateOne({"title": "Godzilla"}, {$push: {"ratings": {$each: [78, 5
 
 5 - Adicione um array chamado ratings ao filme Home Alone com os seguintes valores: [200, 99, 65] 
 R: db.movies.updateOne({"title": "Home Alone"}, {$push: {"ratings": {$each: [200, 99, 65]}}})
+
+6 - Retorne todos os filmes com ratings maior do que 103 , exibindo apenas os campos title e ratings .
+R: db.movies.find({"ratings": {$gt: 103}}, {_id: 0, title: 1, ratings: 1})
