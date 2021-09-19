@@ -102,7 +102,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 - [x] 13-1: _Melhorando o reuso de componentes: props.children e PropTypes_
 - [x] 13-2: _Ciclo de vida de componentes em React_
 - [x] 13-3: _React Router_
-- [] 13-4: _Projeto - Movie Cards Library CRUD_
+- [x] 13-4: _Projeto - Movie Cards Library CRUD_
 
 ##### Bloco 14: Metodologias Ágeis
 
