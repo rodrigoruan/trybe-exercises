@@ -178,7 +178,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 
 ##### Bloco 25: Aggregation Framework
 
-- [] 25-1: _Aggregation Framework - Part 1_
+- [x] 25-1: _Aggregation Framework - Part 1_
 - [] 25-2: _Aggregation Framework - Part 2_
 - [] 25-3: _[Projeto - Aggregations]()_
 
