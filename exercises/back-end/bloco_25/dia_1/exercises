@@ -62,3 +62,6 @@ R: db.vendas.aggregate([{$group: {_id: "$clienteId", valorTotal: {$sum: "$valorT
 
 Exercício 9 : Descubra quais são os 10 clientes que gastaram o maior valor no ano de 2019 .
 R: db.vendas.aggregate([{$match: {dataVenda: {$gte: ISODate("2019-01-01"), $lte: ISODate("2019-12-30")}}}, {$group: {_id: "$clienteId", valorTotal: {$sum: "$valorTotal"}}}, {$sort: {valorTotal: -1}}, {$limit: 10}])
+
+Exercício 10 : Descubra quantos clientes compraram mais de 5 vezes. Retorne um documento que contenha somente o campo clientes com o total de clientes.
+R: db.vendas.aggregate([{$group: {_id: "$clienteId", totalSum: {$sum: 1}}}, {$match: {totalSum: {$gte: 5}}}, {$count: "totalSum"}])
