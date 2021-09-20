@@ -68,3 +68,6 @@ R: db.vendas.aggregate([{$group: {_id: "$clienteId", totalSum: {$sum: 1}}}, {$ma
 
 Exercício 11 : Descubra quantos clientes compraram menos de três vezes entre os meses de Janeiro de 2020 e Março de 2020 .
 R: db.vendas.aggregate([{$match: {dataVenda: {$gte: ISODate("2020-01-01"), $lte: ISODate("2020-03-30") }}}, {$group: {_id: "$clienteId", totalSum: {$sum: 1}}}, {$match: {totalSum: {$lt: 3}}}, {$count: "totalSum"}])
+
+Exercício 12 : Descubra quais as três uf s que mais compraram no ano de 2020 . Retorne os documentos no seguinte formato
+R: db.vendas.aggregate([{$match: {dataVenda: {$gte: ISODate("2020-01-01"), $lte: ISODate("2020-12-30") }}},{$lookup: {from: "clientes", localField: "clienteId", foreignField: "clienteId", as: "clientes"}},{$unwind: "$clientes"}, {$group: {_id: "$clientes.endereco.uf", totalSum: {$sum: 1}}}, {$project: {totalVendas: "$totalSum", uf: "$_id", _id: 0}}, {$sort: {"totalVendas": -1}}, {$limit: 3}])
