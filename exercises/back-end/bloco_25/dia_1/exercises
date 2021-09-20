@@ -34,3 +34,7 @@ R: db.clients.aggregate([{$lookup: {from: "transactions", localField: "name", fo
 3 - Selecione todos os cliente do estado da "Florida" e suas respectivas transações recebidas.
 R: db.clients.aggregate([{$match: {State: "Florida"}}, {$lookup: {from: "transactions", localField: "name", foreignField: "from", as: "clients"}}])
 
+Exercícios
+
+Exercício 1: Utilizando o estágio $match , escreva uma agregação para retornar somente os clientes do sexo "MASCULINO" .
+R: db.clientes.aggregate([{$match: {sexo: "MASCULINO"}}])
