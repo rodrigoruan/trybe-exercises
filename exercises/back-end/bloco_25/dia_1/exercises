@@ -8,3 +8,11 @@ R: db.transactions.aggregate([{$match: {value: {$gte: 700, $lte: 6000}, to: "Lis
 
 3 - Selecione três transações com o valor acima de 1000
 R: db.transactions.aggregate([{$match: {value: {$gt: 1000}}}, {$limit: 3}])
+
+part two
+
+1 - Selecione todos os bancos, ou seja, valores do campo bank ;
+R: Selecione todos os bancos, ou seja, valores do campo bank ;
+
+2 - Selecione o valor total das transações em cada banco e quantas são;
+R: db.transactions.aggregate([{$project: {_id: "$bank", totalTransactions: {$sum: "$value"}}}])
