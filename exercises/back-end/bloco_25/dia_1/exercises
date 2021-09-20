@@ -1,0 +1,4 @@
+Exercises part one
+
+1 - Selecione todas as transações feitas pelo cliente chamado "Dave America"
+R: db.transactions.aggregate([{$match: {from: "Dave America"}}])
