@@ -22,3 +22,8 @@ R: db.transactions.aggregate([{$group: {_id: "$bank", totalTransactions: {$sum: 
 
 4 - Selecione os bancos que têm o valor total de transações maior que 1000.
 R: db.transactions.aggregate([{$group: {_id: "$bank", totalTransactions: {$sum: '$value'}}}, {$match: {"totalTransactions": {$gt: 1000}}}])
+
+part three
+
+1 - Selecione todos os clientes com as suas respectivas transações feitas;
+R: db.clients.aggregate([{$lookup: {from: "transactions", localField: "name", foreignField: "from", as: "clients"}}])
