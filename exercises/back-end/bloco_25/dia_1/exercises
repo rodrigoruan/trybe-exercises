@@ -12,7 +12,10 @@ R: db.transactions.aggregate([{$match: {value: {$gt: 1000}}}, {$limit: 3}])
 part two
 
 1 - Selecione todos os bancos, ou seja, valores do campo bank ;
-R: Selecione todos os bancos, ou seja, valores do campo bank ;
+R: db.transactions.aggregate([{$group: {_id: "$bank", totalTransactions: {$sum: "$value"}, count: {$sum: 1}}}])
 
 2 - Selecione o valor total das transações em cada banco e quantas são;
-R: db.transactions.aggregate([{$project: {_id: "$bank", totalTransactions: {$sum: "$value"}}}])
+R: db.transactions.aggregate([{$group: {_id: "$bank", totalTransactions: {$sum: "$value"}, count: {$sum: 1}}}])
+
+3 - Selecione o valor total de transações por banco;
+R: db.transactions.aggregate([{$group: {_id: "$bank", totalTransactions: {$sum: "$value"}}}])
