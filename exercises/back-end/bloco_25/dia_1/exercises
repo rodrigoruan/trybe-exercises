@@ -47,3 +47,8 @@ R: db.clientes.aggregate([{$match: {sexo: "FEMININO", dataNascimento: {$gte: ISO
 
 4 - Exercício 4: Conte quantos clientes do estado SC existem na coleção. Retorne um documento em que o campo _id contenha a UF e outro campo com o total.
 R: db.clientes.aggregate([{$match: {"endereco.uf": "SC"}}, {$group: {_id: "$endereco.uf", count: {$sum: 1}}}])
+
+5 - Exercício 5: Agrupe os clientes por sexo . Retorne o total de clientes de cada sexo no campo total .
+R: db.clientes.aggregate([{$group: {_id: "$sexo", count: {$sum: 1}}}])
+
+
