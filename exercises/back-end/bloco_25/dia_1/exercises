@@ -27,3 +27,6 @@ part three
 
 1 - Selecione todos os clientes com as suas respectivas transações feitas;
 R: db.clients.aggregate([{$lookup: {from: "transactions", localField: "name", foreignField: "from", as: "clients"}}])
+
+2 - Selecione quatro clientes com as suas respectivas transações recebidas
+R: db.clients.aggregate([{$lookup: {from: "transactions", localField: "name", foreignField: "from", as: "clients"}}, {$limit: 4}])
