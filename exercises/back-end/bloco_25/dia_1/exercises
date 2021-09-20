@@ -65,3 +65,6 @@ R: db.vendas.aggregate([{$match: {dataVenda: {$gte: ISODate("2019-01-01"), $lte:
 
 Exercício 10 : Descubra quantos clientes compraram mais de 5 vezes. Retorne um documento que contenha somente o campo clientes com o total de clientes.
 R: db.vendas.aggregate([{$group: {_id: "$clienteId", totalSum: {$sum: 1}}}, {$match: {totalSum: {$gte: 5}}}, {$count: "totalSum"}])
+
+Exercício 11 : Descubra quantos clientes compraram menos de três vezes entre os meses de Janeiro de 2020 e Março de 2020 .
+R: db.vendas.aggregate([{$match: {dataVenda: {$gte: ISODate("2020-01-01"), $lte: ISODate("2020-03-30") }}}, {$group: {_id: "$clienteId", totalSum: {$sum: 1}}}, {$match: {totalSum: {$lt: 3}}}, {$count: "totalSum"}])
