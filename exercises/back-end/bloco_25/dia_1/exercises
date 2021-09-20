@@ -71,3 +71,6 @@ R: db.vendas.aggregate([{$match: {dataVenda: {$gte: ISODate("2020-01-01"), $lte:
 
 Exercício 12 : Descubra quais as três uf s que mais compraram no ano de 2020 . Retorne os documentos no seguinte formato
 R: db.vendas.aggregate([{$match: {dataVenda: {$gte: ISODate("2020-01-01"), $lte: ISODate("2020-12-30") }}},{$lookup: {from: "clientes", localField: "clienteId", foreignField: "clienteId", as: "clientes"}},{$unwind: "$clientes"}, {$group: {_id: "$clientes.endereco.uf", totalSum: {$sum: 1}}}, {$project: {totalVendas: "$totalSum", uf: "$_id", _id: 0}}, {$sort: {"totalVendas": -1}}, {$limit: 3}])
+
+Exercício 13 : Encontre qual foi o total de vendas e a média de vendas de cada uf no ano de 2019 . Ordene os resultados pelo nome da uf . Retorne os documentos no seguinte formato:
+R: 
