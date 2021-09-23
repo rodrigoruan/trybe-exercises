@@ -25,4 +25,4 @@ function game() {
   else console.log("Até mais!");
 }
 
-game();
+module.exports = game;
