@@ -106,3 +106,26 @@ function showAllCharacters() {
 //     });
 //   });
 // }
+
+function changeNelsonByMaggie() {
+  return new Promise((resolve, reject) => {
+    showAllCharacters().then((r) => {
+      fs.readFile("simpsonFamily.json", "utf8").then((r) => {
+        const res = JSON.parse(r);
+        const newArray = res.map((char) =>
+          char.id === 999 ? { name: "Maggie Simpsons", id: 999 } : char
+        );
+
+        fs.writeFile("simpsonFamily.json", JSON.stringify(newArray))
+          .then(() => {
+            resolve(newArray);
+          })
+          .catch((err) => {
+            reject(Error("Erro"));
+          });
+      });
+    });
+  });
+}
+
+changeNelsonByMaggie();
