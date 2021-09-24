@@ -1,0 +1,5 @@
+Finalmente
+estou
+usando
+Promise.all
+!!!
