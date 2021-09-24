@@ -38,16 +38,16 @@ const fs = require("fs").promises;
 // resolvePromise();
 
 //4
-function showAllCharacters() {
-  return fs
-    .readFile("simpsons.json", "utf8")
-    .then((response) => {
-      const parsedArray = JSON.parse(response);
-      parsedArray.forEach(({ id, name }) => console.log(`${id} - ${name}`));
-      return parsedArray;
-    })
-    .catch((err) => console.error(`Erro ao ler o arquivo: ${err}`));
-}
+// function showAllCharacters() {
+//   return fs
+//     .readFile("simpsons.json", "utf8")
+//     .then((response) => {
+//       const parsedArray = JSON.parse(response);
+//       parsedArray.forEach(({ id, name }) => console.log(`${id} - ${name}`));
+//       return parsedArray;
+//     })
+//     .catch((err) => console.error(`Erro ao ler o arquivo: ${err}`));
+// }
 
 // function findCharacterById(id) {
 //   return new Promise((resolve, reject) => {
@@ -107,25 +107,30 @@ function showAllCharacters() {
 //   });
 // }
 
-function changeNelsonByMaggie() {
-  return new Promise((resolve, reject) => {
-    showAllCharacters().then((r) => {
-      fs.readFile("simpsonFamily.json", "utf8").then((r) => {
-        const res = JSON.parse(r);
-        const newArray = res.map((char) =>
-          char.id === 999 ? { name: "Maggie Simpsons", id: 999 } : char
-        );
+// function changeNelsonByMaggie() {
+//   return new Promise((resolve, reject) => {
+//     fs.readFile("simpsonFamily.json", "utf8").then((r) => {
+//       const res = JSON.parse(r);
+//       const newArray = res.map((char) =>
+//         char.id === 999 ? { name: "Maggie Simpsons", id: 999 } : char
+//       );
 
-        fs.writeFile("simpsonFamily.json", JSON.stringify(newArray))
-          .then(() => {
-            resolve(newArray);
-          })
-          .catch((err) => {
-            reject(Error("Erro"));
-          });
-      });
-    });
-  });
-}
+//       fs.writeFile("simpsonFamily.json", JSON.stringify(newArray))
+//         .then(() => {
+//           resolve(newArray);
+//         })
+//         .catch((err) => {
+//           reject(Error("Erro"));
+//         });
+//     });
+//   });
+// }
 
-changeNelsonByMaggie();
+// 5
+
+const arr = ["Finalmente", "estou", "usando", "Promise.all", "!!!"];
+arr.map((txt, idx) => fs.writeFile(`file${idx + 1}.txt`, txt));
+
+Promise.all(arr).then((values) => {
+  fs.writeFile("fileAll.txt", values.join`\n`);
+});
