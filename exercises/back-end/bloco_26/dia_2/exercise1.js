@@ -39,12 +39,24 @@ const fs = require("fs").promises;
 
 //4
 function showAllCharacters() {
-  fs.readFile("simpsons.json", "utf8")
+  return fs
+    .readFile("simpsons.json", "utf8")
     .then((response) => {
       const parsedArray = JSON.parse(response);
       parsedArray.forEach(({ id, name }) => console.log(`${id} - ${name}`));
+      return parsedArray;
     })
     .catch((err) => console.error(`Erro ao ler o arquivo: ${err}`));
 }
 
-showAllCharacters();
+function findCharacterById(id) {
+  return new Promise((resolve, reject) => {
+    showAllCharacters().then((r) => {
+      const res = r.find((char) => Number(char.id) === id);
+      if (res.length === 0) reject("id não encontrado");
+      resolve(res);
+    });
+  });
+}
+
+findCharacterById(2).then((r) => console.log(r));
