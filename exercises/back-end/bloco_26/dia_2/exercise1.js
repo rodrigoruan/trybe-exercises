@@ -49,23 +49,43 @@ function showAllCharacters() {
     .catch((err) => console.error(`Erro ao ler o arquivo: ${err}`));
 }
 
-function findCharacterById(id) {
+// function findCharacterById(id) {
+//   return new Promise((resolve, reject) => {
+//     showAllCharacters().then((r) => {
+//       const res = r.find((char) => Number(char.id) === id);
+//       if (res.length === 0) reject("id não encontrado");
+//       resolve(res);
+//     });
+//   });
+// }
+
+// function removeCharacters() {
+//   return new Promise((resolve, reject) => {
+//     showAllCharacters().then((r) => {
+//       const res = r.filter((char) => ![10, 6].includes(Number(char.id)));
+//       fs.writeFile("simpsons.json", JSON.stringify(res))
+//         .then(() => {
+//           resolve(res);
+//         })
+//         .catch((err) => {
+//           reject(Error("Erro"));
+//         });
+//     });
+//   });
+// }
+
+function createSimpsonFamily() {
   return new Promise((resolve, reject) => {
     showAllCharacters().then((r) => {
-      const res = r.find((char) => Number(char.id) === id);
-      if (res.length === 0) reject("id não encontrado");
-      resolve(res);
+      const res = r.filter((char) => [1, 2, 3, 4].includes(Number(char.id)));
+      fs.writeFile("simpsonFamily.json", JSON.stringify(res))
+        .then(() => {
+          resolve(res);
+        })
+        .catch((err) => {
+          reject(Error("Erro"));
+        });
     });
   });
 }
-
-function removeCharacters() {
-  return new Promise((resolve, reject) => {
-    showAllCharacters().then((r) => {
-      const res = r.filter((char) => ![10, 6].includes(Number(char.id)));
-      resolve(res);
-    });
-  });
-}
-
-removeCharacters().then((r) => console.log(r));
+createSimpsonFamily()
