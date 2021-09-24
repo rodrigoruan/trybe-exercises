@@ -59,4 +59,13 @@ function findCharacterById(id) {
   });
 }
 
-findCharacterById(2).then((r) => console.log(r));
+function removeCharacters() {
+  return new Promise((resolve, reject) => {
+    showAllCharacters().then((r) => {
+      const res = r.filter((char) => ![10, 6].includes(Number(char.id)));
+      resolve(res);
+    });
+  });
+}
+
+removeCharacters().then((r) => console.log(r));
