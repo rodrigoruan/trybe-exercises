@@ -74,18 +74,35 @@ function showAllCharacters() {
 //   });
 // }
 
-function createSimpsonFamily() {
-  return new Promise((resolve, reject) => {
-    showAllCharacters().then((r) => {
-      const res = r.filter((char) => [1, 2, 3, 4].includes(Number(char.id)));
-      fs.writeFile("simpsonFamily.json", JSON.stringify(res))
-        .then(() => {
-          resolve(res);
-        })
-        .catch((err) => {
-          reject(Error("Erro"));
-        });
-    });
-  });
-}
-createSimpsonFamily()
+// function createSimpsonFamily() {
+//   return new Promise((resolve, reject) => {
+//     showAllCharacters().then((r) => {
+//       const res = r.filter((char) => [1, 2, 3, 4].includes(Number(char.id)));
+//       fs.writeFile("simpsonFamily.json", JSON.stringify(res))
+//         .then(() => {
+//           resolve(res);
+//         })
+//         .catch((err) => {
+//           reject(Error("Erro"));
+//         });
+//     });
+//   });
+// }
+
+// function addNelsonToFamily() {
+//   return new Promise((resolve, reject) => {
+//     showAllCharacters().then((r) => {
+//       const res = r.filter((char) => [1, 2, 3, 4].includes(Number(char.id)));
+//       fs.writeFile(
+//         "simpsonFamily.json",
+//         JSON.stringify([...res, { id: 999, name: "Nelson Muntz" }])
+//       )
+//         .then(() => {
+//           resolve(res);
+//         })
+//         .catch((err) => {
+//           reject(Error("Erro"));
+//         });
+//     });
+//   });
+// }
