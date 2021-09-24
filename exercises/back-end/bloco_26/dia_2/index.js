@@ -21,23 +21,28 @@ function writeContet() {
   fs.readFile(`file${script}.txt`, "utf8")
     .then((r) => {
       const word = readline.question("Qual palavra deseja alterar?");
-      const newWord = readline.question(
-        "Qual palavra deseja inserir no lugar?"
-      );
+      const newWord = readline.question("Qual palavra deseja inserir?");
       const rgx = new RegExp(word, "g");
       const newSentence = r.replace(rgx, newWord);
+
       console.log(newSentence);
+
       const path = readline.question("Qual caminho de destino?");
       fs.writeFile(path, newSentence);
     })
     .catch((err) => console.log("Arquivo inexistente"));
 }
 
+const obj = {
+  1: showContent,
+  2: writeContet,
+};
+
 const s = readline.questionInt(`Qual função vc deseja rodar ? 
 1 - readContent
 2 - writeFile
 R: `);
 
-if (s === 1) showContent();
-else if (s === 2) writeContet();
-else console.log("Função inexistente");
+if (obj[s]) {
+  obj[s]();
+} else console.log("Função inexistente");
