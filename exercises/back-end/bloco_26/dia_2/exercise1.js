@@ -11,6 +11,10 @@ function func(a, b, c) {
   });
 }
 
-func(1, 1, 10)
+function randomNum() {
+  return Math.floor(Math.random() * 100 + 1);
+}
+
+func(randomNum(), randomNum(), randomNum())
   .then((r) => console.log(r))
   .catch((err) => console.log(err.message));
