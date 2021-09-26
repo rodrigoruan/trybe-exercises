@@ -179,13 +179,13 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 ##### Bloco 25: Aggregation Framework
 
 - [x] 25-1: _Aggregation Framework - Part 1_
-- [] 25-2: _Aggregation Framework - Part 2_
-- [] 25-3: _[Projeto - Aggregations]()_
+- [x] 25-2: _Aggregation Framework - Part 2_
+- [x] 25-3: _[Projeto - Aggregations]()_
 
 ##### Bloco 26: Intro - NodeJS
 
-- [] 26-1: _NodeJS - Introdução_
-- [] 26-2: _NodeJS - Fluxo Assíncrono_
+- [x] 26-1: _NodeJS - Introdução_
+- [x] 26-2: _NodeJS - Fluxo Assíncrono_
 - [ ] 26-3: _NodeJS - Arquitetura_
 - [ ] 26-4: _[Projeto - A CLI of Ice and Fire]()_
 
