@@ -8,10 +8,15 @@ describe("Testing positive or negative function", () => {
     expect(response).to.be.equal("positivo");
   });
 
-  it('When passed a number that is lower than 0, should return "negativo"'),
-    () => {
-      const response = positiveOrNegative(-1);
+  it('When passed a number that is lower than 0, should return "negativo"', () => {
+    const response = positiveOrNegative(-1);
 
-      expect(response).to.be.equal("negativo");
-    };
+    expect(response).to.be.equal("negativo");
+  });
+
+  it('When passed a number that is 0, should return "neutro"', () => {
+    const response = positiveOrNegative(0);
+
+    expect(response).to.be.equal("neutro");
+  });
 });
