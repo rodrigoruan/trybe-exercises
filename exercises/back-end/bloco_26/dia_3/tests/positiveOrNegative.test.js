@@ -5,6 +5,7 @@ describe("Testing positive or negative function", () => {
   it('When passed a that number is over than 0, should return "positivo"', () => {
     const response = positiveOrNegative(2);
 
+    expect(reponse).to.be.a("string");
     expect(response).to.be.equal("positivo");
   });
 
