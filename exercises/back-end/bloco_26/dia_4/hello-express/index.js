@@ -52,3 +52,21 @@ app.get("/drink/:id", (req, res) => {
 
   return res.status(200).json(drink);
 });
+
+app.get("/recipes/search", function (req, res) {
+  const { name, maxPrice, minPrice } = req.query;
+  const filteredRecipes = recipes.filter(
+    (r) =>
+      r.name.includes(name) &&
+      r.price < parseInt(maxPrice) &&
+      r.price >= parseInt(minPrice)
+  );
+  res.status(200).json(filteredRecipes);
+});
+
+app.get("/drinks/search", (req, res) => {
+  const { name } = req.query;
+  const filteredDrinks = drinks.filter((el) => el.name.includes(name));
+
+  return res.status(200).json(filteredDrinks);
+});
