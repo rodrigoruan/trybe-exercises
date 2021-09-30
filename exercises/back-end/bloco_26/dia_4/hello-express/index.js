@@ -163,3 +163,23 @@ app.get("/simpsons/:id", (req, res) => {
 
   return res.status(200).json(simpson);
 });
+
+app.post("/simpsons", (req, res) => {
+  const { id, name } = req.body;
+  const simpson = simpsons.find((el) => +el.id === +id);
+
+  if (simpson) {
+    return res.status(409).json({ message: "Simpson already exists" });
+  }
+
+  fs.writeFile(
+    "./simpsons.json",
+    JSON.stringify([...simpsons, { id, name }]),
+    (err) => {
+      if (err) console.log(err);
+      console.log("Sucess");
+    }
+  );
+
+  return res.status(200).json({ message: "No content - 204" });
+});
