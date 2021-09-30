@@ -150,5 +150,5 @@ app.put("/users/:name/:age", (req, res) => {
 const simpsons = require("./simpsons.json");
 
 app.get("/simpsons", (_req, res) => {
-  res.status(200).json(simpsons);
+  res.status(200).json(simpsons)
 });
