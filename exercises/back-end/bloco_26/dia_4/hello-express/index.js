@@ -5,6 +5,8 @@ const cors = require("cors");
 
 app.use(cors());
 
+//  fixation
+
 const recipes = [
   { id: 1, name: "Lasanha", price: 40.0, waitTime: 30 },
   { id: 2, name: "Macarrão a Bolonhesa", price: 35.0, waitTime: 25 },
@@ -32,12 +34,21 @@ app.get("/drinks", (_req, res) => {
   res.json(drinks);
 });
 
-console.log([...drinks, ...recipes]);
-
 app.get("/drinksAndRecipes", (_req, res) => {
   res.json(
     [...drinks, ...recipes].sort(
       (a, b) => a.name.charCodeAt() - b.name.charCodeAt()
     )
   );
+});
+
+app.get("/drink/:id", (req, res) => {
+  const { id } = req.params;
+  const drink = drinks.find((r) => r.id === Number(id));
+
+  if (!drink) {
+    return res.status(404).json({ message: "Drink not found" });
+  }
+
+  return res.status(200).json(drink);
 });
