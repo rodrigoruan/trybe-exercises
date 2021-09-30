@@ -1,6 +1,8 @@
 /* index.js */
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
+app.use(bodyParser.json());
 const cors = require("cors");
 
 app.use(cors());
@@ -69,4 +71,43 @@ app.get("/drinks/search", (req, res) => {
   const filteredDrinks = drinks.filter((el) => el.name.includes(name));
 
   return res.status(200).json(filteredDrinks);
+});
+
+app.post("/recipes", function (req, res) {
+  const { id, name, price, waitTime } = req.body;
+  recipes.push({ id, name, price, waitTime });
+  res.status(201).json({ message: "Recipe created successfully!" });
+});
+
+app.post("/drinks", function (req, res) {
+  const { id, name, price } = req.body;
+  drinks.push({ id, name, price });
+  res.status(201).json({ message: "Drink created successfully!" });
+});
+
+app.put("/drinks/:id", (req, res) => {
+  const { id } = req.params;
+  const { name, price } = req.body;
+  const drinkIndex = drinks.findIndex((r) => r.id === Number(id));
+
+  if (drinkIndex === -1) {
+    return res.status(404).json({ message: "Drink not found" });
+  }
+
+  drinks[drinkIndex] = { ...drinks[drinkIndex], name, price };
+
+  return res.status(204).end();
+});
+
+app.delete("/drinks/:id", (req, res) => {
+  const { id } = req.params;
+  const drinkIndex = drinks.findIndex((r) => r.id === Number(id));
+
+  if (drinkIndex === -1) {
+    return res.status(404).json({ message: "Drink not found" });
+  }
+
+  drinks.splice(drinkIndex, 1);
+
+  return res.status(204).end();
 });
