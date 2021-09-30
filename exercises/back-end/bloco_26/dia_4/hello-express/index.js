@@ -2,10 +2,11 @@
 const fs = require("fs");
 const express = require("express");
 const bodyParser = require("body-parser");
-const app = express();
-app.use(bodyParser.json());
+const randomToken = require("random-token");
 const cors = require("cors");
+const app = express();
 
+app.use(bodyParser.json());
 app.use(cors());
 
 // //  fixation
@@ -185,4 +186,16 @@ app.post("/simpsons", (req, res) => {
   );
 
   return res.status(200).json({ message: "No content - 204" });
+});
+
+app.post("/signup", (req, res) => {
+  const { email, password, firstName, phone } = req.body;
+
+  if ([email, password, firstName, phone].includes(undefined)) {
+    return res.status(401).json({ message: "missing fields" });
+  }
+
+  const token = randomToken(16);
+
+  return res.status(200).json({ token });
 });
