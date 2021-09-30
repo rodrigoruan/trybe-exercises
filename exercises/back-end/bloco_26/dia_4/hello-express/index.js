@@ -1,4 +1,5 @@
 /* index.js */
+const fs = require("fs");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -144,4 +145,10 @@ app.put("/users/:name/:age", (req, res) => {
   res
     .status(200)
     .json({ message: `Seu nome é ${name} e você tem ${age} anos` });
+});
+
+const simpsons = require("./simpsons.json");
+
+app.get("/simpsons", (_req, res) => {
+  res.status(200).json(simpsons);
 });
