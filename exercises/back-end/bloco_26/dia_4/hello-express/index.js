@@ -150,7 +150,9 @@ app.put("/users/:name/:age", (req, res) => {
 const simpsons = require("./simpsons.json");
 
 app.get("/simpsons", (_req, res) => {
-  res.status(200).json(simpsons);
+  fs.readFile("./simpsons.json", (_err, _data) => {
+    return res.status(200).json(simpsons);
+  });
 });
 
 app.get("/simpsons/:id", (req, res) => {
