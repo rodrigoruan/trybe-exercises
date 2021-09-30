@@ -157,11 +157,12 @@ app.get("/simpsons/:id", (req, res) => {
   const { id } = req.params;
   const simpson = simpsons.find((el) => +el.id === +id);
 
-  if (!simpson) {
-    return res.status(404).json({ message: "Simpson not found" });
-  }
-
-  return res.status(200).json(simpson);
+  fs.readFile("./simpsons.json", (_err, _data) => {
+    if (!simpson) {
+      return res.status(404).json({ message: "Simpson not found" });
+    }
+    return res.status(200).json(simpson);
+  });
 });
 
 app.post("/simpsons", (req, res) => {
