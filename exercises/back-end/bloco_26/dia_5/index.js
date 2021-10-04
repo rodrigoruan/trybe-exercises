@@ -61,11 +61,19 @@ app.post("/teams", (req, res) => {
   const infos = JSON.stringify({ name, initials, country, league });
 
   fs.writeFileSync(
-    `/home/rodrigo/Documents/trybe-exercises/exercises/back-end/bloco_26/dia_5/${name}`,
+    `/home/rodrigo/Documents/trybe-exercises/exercises/back-end/bloco_26/dia_5/teams.json`,
     infos
   );
 
   res.status(200).json(infos);
+});
+
+app.get("/teams", (_req, res) => {
+  const file = fs.readFileSync("./teams.json", "utf-8");
+
+  if (!file) return res.status(200).json({ teams: [] });
+
+  res.status(200).json(JSON.parse(file));
 });
 
 app.listen(3001, () => {
