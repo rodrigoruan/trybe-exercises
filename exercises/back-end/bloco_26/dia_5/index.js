@@ -38,6 +38,18 @@ app.get("/posts/:id", (req, res) => {
   res.status(200).json({ filteredPost });
 });
 
+app.get("/posts", (_req, res) => {
+  if (posts.length === 0) {
+    return res.status(200).json({ posts: [] });
+  }
+
+  res.status(200).json(posts);
+});
+
+app.use((_req, res, _next) => {
+  res.status(404).json({ message: "Opsss, route not found" });
+});
+
 app.listen(3001, () => {
-  console.log("Ouvindo na porta 3001")
+  console.log("Ouvindo na porta 3001");
 });
