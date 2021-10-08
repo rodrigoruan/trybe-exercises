@@ -5,7 +5,7 @@ const Books = require('./model/Books');
 const app = express();
 
 app.get('/books', async (_req, res) => {
-  const books = await Books.getAllBooks();
+  const books = await Books.getAllBooks()
 
   res.status(200).json(books);
 });
