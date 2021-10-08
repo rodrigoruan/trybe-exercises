@@ -10,6 +10,6 @@ app.get('/authors', async (req, res) => {
   res.status(200).json(authors);
 });
 
-app.listen(3000, () => {
-  console.log(`Ouvindo a porta 3000`);
+app.listen(3003, () => {
+  console.log(`Ouvindo a porta 3003`);
 });
