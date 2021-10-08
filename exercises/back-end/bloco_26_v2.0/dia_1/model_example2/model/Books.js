@@ -54,9 +54,9 @@ const findAuthorById = async (q) => {
 };
 
 const getAllBooks = async () => {
-  const [books] = await connection.execute('SELECT * FROM books');
-
-  return books;
+  return connection()
+    .then((db) => db.collection('books').find().toArray())
+    .then((books) => books);
 };
 
 module.exports = {

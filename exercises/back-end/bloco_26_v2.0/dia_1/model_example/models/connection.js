@@ -1,10 +1,22 @@
-const mysql = require('mysql2/promise');
+const { MongoClient } = require('mongodb');
 
-const connection = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: 'troia159',
-  database: 'model_example',
-});
+const OPTIONS = {
+  maxPoolSize: 50,
+  wtimeoutMS: 2500,
+  useNewUrlParser: true,
+};
+
+const MONGO_DB_URL = 'mongodb://127.0.0.1:27017';
+
+let db = null;
+
+const connection = () => {
+  return db
+    ? Promise.resolve(db)
+    : MongoClient.connect(MONGO_DB_URL, OPTIONS).then((conn) => {
+        db = conn.db('model_example');
+        return db;
+      });
+};
 
 module.exports = connection;

@@ -15,11 +15,16 @@ function toCamelCase({ id, first_name, middle_name, last_name }) {
 }
 
 const getAll = async () => {
-  const [authors] = await connection.execute(
-    'SELECT * FROM model_example.authors'
-  );
-
-  return authors.map((author) => toCamelCase(author));
+  return connection()
+    .then((db) => db.collection('authors').find().toArray())
+    .then((authors) =>
+      authors.map(({ _id, firstName, middleName, lastName }) => ({
+        id: _id,
+        firstName,
+        middleName,
+        lastName,
+      }))
+    );
 };
 
 module.exports = {
