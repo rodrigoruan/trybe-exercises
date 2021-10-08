@@ -23,6 +23,12 @@ app.post('/user', async (req, res) => {
     .json({ id: response[0].insertId, firstName, lastName, email });
 });
 
+app.get('/user', async (_req, res) => {
+  const response = await User.getAllUsers();
+
+  res.status(200).json(response);
+});
+
 app.listen(3001, () => {
   console.log('Ouvindo na porta 3001');
 });
