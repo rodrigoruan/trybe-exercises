@@ -2,7 +2,15 @@ const connection = require('./connections');
 
 const getByAuthorId = async (q) => {
   const [books] = await connection.execute(
-    `SELECT * FROM books WHERE author_id = ${q}`
+    `SELECT * FROM authors WHERE author_id = ${q}`
+  );
+
+  return books;
+};
+
+const findAuthorById = async (q) => {
+  const [books] = await connection.execute(
+    `SELECT * FROM authors WHERE id = ${q}`
   );
 
   return books;
@@ -14,4 +22,4 @@ const getAllBooks = async () => {
   return books;
 };
 
-module.exports = { getAllBooks, getByAuthorId };
+module.exports = { getAllBooks, getByAuthorId, findAuthorById };
