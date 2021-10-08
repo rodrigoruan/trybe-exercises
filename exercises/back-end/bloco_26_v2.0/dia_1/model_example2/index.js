@@ -27,9 +27,9 @@ app.post('/books', async (req, res) => {
 
   const response = await Books.createNewBook(title, author_id);
 
-  // if (response === 'Dados inválidos') {
-  //   return res.status(400).json({ message: 'dados invalidos' });
-  // }
+  if (response === 'Dados inválidos') {
+    return res.status(400).json({ message: 'dados invalidos' });
+  }
 
   res.status(200).json(response);
 });
