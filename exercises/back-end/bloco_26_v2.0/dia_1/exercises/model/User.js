@@ -7,10 +7,31 @@ const getAllUsers = async () => {
     .then((r) => r);
 };
 
+const updateUser = async (id, firstName, lastName, email, password) => {
+  return connection()
+    .then((db) =>
+      db.collection('users').findOneAndUpdate(
+        { _id: ObjectID(id) },
+        {
+          $set: {
+            _id: ObjectID(id),
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password,
+          },
+        }
+      )
+    )
+    .then((_) => ({ id: ObjectID(id), firstName, lastName, email, password }))
+    .catch((_) => `Error`);
+};
+
 const getUserById = async (id) => {
   return connection()
     .then((db) => db.collection('users').findOne(ObjectID(id)))
-    .then((r) => r);
+    .then((r) => r)
+    .catch((err) => false);
 };
 
 const createNewUser = async (firstName, lastName, email, password) => {
@@ -24,4 +45,4 @@ const createNewUser = async (firstName, lastName, email, password) => {
     .then((r) => ({ id: r.insertedId, firstName, lastName, email, password }));
 };
 
-module.exports = { createNewUser, getAllUsers, getUserById };
+module.exports = { createNewUser, getAllUsers, getUserById, updateUser };
