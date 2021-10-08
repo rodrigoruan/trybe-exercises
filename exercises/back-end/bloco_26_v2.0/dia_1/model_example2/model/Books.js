@@ -3,29 +3,24 @@ const connection = require('./connections');
 
 const validate = (title, author_id, authorExists) => {
   if (!title || title.length < 3) return false;
-  if (!author_id || !authorExists) return false;
+  if (!author_id || authorExists) return false;
 
   return true;
 };
 
 const createNewBook = async (title, author_id) => {
-  const [authors] = await connection.execute(
-    'SELECT * FROM authors WHERE id=?',
-    [author_id]
-  );
+  const author = connection()
+    .then((db) => db.collection('authors').findOne(ObjectID(author_id)))
+    .then((authors) => !authors._id)
+    .catch((err) => err);
 
-  const authorExists = authors.some(
-    (author) => author.id === Number(author_id)
-  );
-
-  if (!validate(title, author_id, authorExists)) {
+  if (!validate(title, author_id, !author)) {
     return 'Dados inválidos';
   }
 
-  connection.execute(
-    'INSERT INTO model_example.books (title, author_id) VALUES (? ,?)',
-    [title, author_id]
-  );
+  connection()
+    .then((db) => db.collection('books').insertOne({ title, author_id }))
+    .then((r) => console.log(r));
 
   return 'Livro criado com sucesso';
 };
