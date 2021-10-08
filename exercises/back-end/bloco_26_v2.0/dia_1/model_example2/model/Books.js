@@ -30,11 +30,9 @@ const createNewBook = async (title, author_id) => {
 };
 
 const getByAuthorId = async (q) => {
-  const [books] = await connection.execute(
-    `SELECT * FROM books WHERE author_id = ${q}`
-  );
-
-  return books;
+  return connection()
+    .then((db) => db.collection('books').find({ author_id: q }).toArray())
+    .then((books) => books);
 };
 
 const findBookById = async (q) => {
