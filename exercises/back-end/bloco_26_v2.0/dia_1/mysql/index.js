@@ -23,6 +23,21 @@ app.post('/user', async (req, res) => {
     .json({ id: response[0].insertId, firstName, lastName, email });
 });
 
+app.get('/user/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const response = await User.getUserById(Number(id));
+
+  if (!response.length) {
+    return res.status(404).json({
+      error: true,
+      message: 'Usuário não encontrado',
+    });
+  }
+
+  return res.status(200).json(response);
+});
+
 app.get('/user', async (_req, res) => {
   const response = await User.getAllUsers();
 

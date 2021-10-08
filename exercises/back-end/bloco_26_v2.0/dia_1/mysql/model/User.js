@@ -5,6 +5,14 @@ const getAllUsers = async () => {
   return users;
 };
 
+const getUserById = async (id) => {
+  const [users] = await connection.execute('SELECT * FROM users WHERE id = ?', [
+    id,
+  ]);
+
+  return users;
+};
+
 const createUser = async (firstName, lastName, email, password) => {
   if ([firstName, lastName, email, password].includes(undefined)) return false;
   if (password.length <= 6) return false;
@@ -15,4 +23,4 @@ const createUser = async (firstName, lastName, email, password) => {
   );
 };
 
-module.exports = { createUser, getAllUsers };
+module.exports = { createUser, getAllUsers, getUserById };
