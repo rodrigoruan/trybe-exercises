@@ -24,7 +24,10 @@ const updateUser = async (id, firstName, lastName, email, password) => {
       )
     )
     .then((_) => ({ id: ObjectID(id), firstName, lastName, email, password }))
-    .catch((_) => `Error`);
+    .catch((_) => ({
+      error: true,
+      message: 'Usuário não encontrado',
+    }));
 };
 
 const getUserById = async (id) => {
