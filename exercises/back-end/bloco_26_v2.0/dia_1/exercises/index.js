@@ -12,6 +12,21 @@ app.get('/user', async (_req, res) => {
   res.status(200).json(response);
 });
 
+app.get('/user/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const response = await User.getUserById(id);
+
+  if (!response) {
+    return res.status(404).json({
+      error: true,
+      message: 'Usuário não encontrado',
+    });
+  }
+
+  res.status(200).json(response);
+});
+
 app.post('/user', async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
 
