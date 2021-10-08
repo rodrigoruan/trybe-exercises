@@ -13,6 +13,15 @@ const getUserById = async (id) => {
   return users;
 };
 
+const updateUserById = async (id, firstName, lastName, email, password) => {
+  const [user] = await connection.execute(
+    'UPDATE users SET first_name=?, last_name=?, email=?, password=? WHERE id=?',
+    [firstName, lastName, email, password, id]
+  );
+
+  return user;
+};
+
 const createUser = async (firstName, lastName, email, password) => {
   if ([firstName, lastName, email, password].includes(undefined)) return false;
   if (password.length <= 6) return false;
@@ -23,4 +32,4 @@ const createUser = async (firstName, lastName, email, password) => {
   );
 };
 
-module.exports = { createUser, getAllUsers, getUserById };
+module.exports = { createUser, getAllUsers, getUserById, updateUserById };

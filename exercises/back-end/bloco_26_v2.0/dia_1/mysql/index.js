@@ -23,6 +23,35 @@ app.post('/user', async (req, res) => {
     .json({ id: response[0].insertId, firstName, lastName, email });
 });
 
+app.put('/user/:id', async (req, res) => {
+  const { firstName, lastName, email, password } = req.body;
+  const { id } = req.params;
+
+  if ([id, firstName, lastName, email, password].includes(undefined)) {
+    return res.status(400).json({
+      error: true,
+      message: 'Dados inválidos',
+    });
+  }
+
+  const response = await User.updateUserById(
+    id,
+    firstName,
+    lastName,
+    email,
+    password
+  );
+
+  if (response.affectedRows === 0) {
+    return res.status(400).json({
+      error: true,
+      message: 'Dados inválidos',
+    });
+  }
+
+  res.status(200).json({ id, firstName, lastName, email, password });
+});
+
 app.get('/user/:id', async (req, res) => {
   const { id } = req.params;
 
