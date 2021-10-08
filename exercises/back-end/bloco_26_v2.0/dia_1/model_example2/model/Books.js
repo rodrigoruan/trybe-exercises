@@ -1,3 +1,4 @@
+const { ObjectID } = require('mongodb');
 const connection = require('./connections');
 
 const validate = (title, author_id, authorExists) => {
@@ -36,11 +37,9 @@ const getByAuthorId = async (q) => {
 };
 
 const findBookById = async (q) => {
-  const [books] = await connection.execute('SELECT * FROM books WHERE id=?', [
-    q,
-  ]);
-
-  return books;
+  return connection()
+    .then((db) => db.collection('books').findOne(ObjectID(q)))
+    .then((book) => book);
 };
 
 const findAuthorById = async (q) => {
