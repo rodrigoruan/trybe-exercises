@@ -17,6 +17,12 @@ const createNewCep = async (cep, log, bairro, local, uf) => {
     };
   }
 
+  const cepInfo = await Cep.fetchCEPInfos(cep);
+
+  if (cepInfo.erro) {
+    return { error: { code: 'notFound', message: 'CEP não encontrado' } };
+  }
+
   await Cep.createNewCep(cep, log, bairro, local, uf);
 
   return { cep, log, bairro, local, uf };
