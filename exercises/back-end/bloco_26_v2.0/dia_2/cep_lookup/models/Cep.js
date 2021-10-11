@@ -10,6 +10,8 @@ const createNewCep = async (cep, log, bairro, local, uf) => {
 };
 
 const findCep = async (cep) => {
+  if (!/^\d{5}-?\d{3}$/.test(cep)) return false;
+
   const [returnedCep] = await connection.execute(
     'SELECT * FROM ceps WHERE cep = ?',
     [cep]
