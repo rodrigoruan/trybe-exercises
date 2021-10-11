@@ -1,0 +1,24 @@
+{
+  "name": "cep_lookup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.22.0",
+    "circular-json": "^0.5.9",
+    "express": "^4.17.1",
+    "express-rescue": "^1.1.31",
+    "fetch": "^1.1.0",
+    "joi": "^17.4.2",
+    "mysql2": "^2.3.0",
+    "node-fetch": "^3.0.0",
+    "nodemon": "^2.0.13"
+  }
+}
