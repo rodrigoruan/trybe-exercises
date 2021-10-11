@@ -8,6 +8,10 @@ app.get('/ping', async (_req, res) => {
   res.status(200).json({ message: 'pong' });
 });
 
+app.get('/cep/:cep', async (req, res) => {
+  const { cep } = req.params;
+});
+
 app.listen(PORT, () => {
   console.log(`Ouvindo na porta: ${PORT}`);
 });
