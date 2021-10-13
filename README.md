@@ -189,7 +189,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 - [x] 26-3: _NodeJS - Testes com NodeJS
 - [x] 26-4: _NodeJS - Express: HTTP com Node.js
 - [x] 26-5: _NodeJS - Express: Middlewares
-- [x] 26-4: _[Talk Manager]()_
+- [x] 26-6: _[Talk Manager]()_
 
 ##### Bloco 27: NodeJS
 
