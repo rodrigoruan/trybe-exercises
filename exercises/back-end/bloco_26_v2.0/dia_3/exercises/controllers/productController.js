@@ -6,35 +6,45 @@ const router = express.Router();
 router.get('/produtos', async (req, res, next) => {
   const products = await ProductModel.getAll();
 
-  res.json(products);
+  if (!products) res.status(404).json({ message: 'Products not found' });
+
+  res.status(200).json(products);
 });
 
 router.get('/produtos/:id', async (req, res, next) => {
   const product = await ProductModel.getById(req.params.id);
 
-  res.json(product);
+  if (!product) res.status(404).json({ message: 'Product not found' });
+
+  res.status(200).json(product);
 });
 
-router.post('/user', async (req, res) => {
+router.post('/produtos', async (req, res) => {
   const { name, brand } = req.body;
 
   const newProduct = await ProductModel.add(name, brand);
 
-  res.json(newProduct);
+  if (!newProduct) res.status(400).json({ message: 'Product not registered' });
+
+  res.status(201).json(newProduct);
 });
 
-router.delete('/user/:id', async (req, res) => {
+router.delete('/produtos/:id', async (req, res) => {
   const products = await ProductModel.exclude(req.params.id);
 
-  res.json(products);
+  if (!products) res.status(400).json({ message: 'Product not deleted' });
+
+  res.status(204).json(products);
 });
 
-router.put('/user/:id', async (req, res) => {
+router.put('/produtos/:id', async (req, res) => {
   const { name, brand } = req.body;
 
   const products = await ProductModel.update(req.params.id, name, brand);
 
-  res.json(products);
+  if (!products) res.status(404).json({ message: 'Product not found' });
+
+  res.status(200).json(products);
 });
 
 module.exports = router;
