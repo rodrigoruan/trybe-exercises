@@ -6,7 +6,7 @@ app.use(express.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/', require('./controllers/productController'));
+app.use('/produtos', require('./controllers/productController'));
 
 app.listen(3000, () => {
   console.log('App listening on port 3000!');
