@@ -1,65 +1,43 @@
+const { ObjectID } = require('mongodb');
 const connection = require('./connection');
 
 const add = async (name, brand) => {
-  try {
-    const [result] = await connection.query(
-      `INSERT INTO products (name, brand) VALUES (?, ?);`,
-      [name, brand]
-    );
-
-    return { id: result.insertId, name, brand };
-  } catch (err) {
-    console.error(err);
-    return process.exit(1);
-  }
+  return connection()
+    .then((db) => db.collection('produtos').insertOne({ name, brand }))
+    .then((result) => ({ id: result.insertId, name, brand }))
+    .catch((err) => err);
 };
 
 const getAll = async () => {
-  try {
-    const [rows] = await connection.query('SELECT * FROM products');
-    return rows;
-  } catch (err) {
-    console.error(err);
-    return process.exit(1);
-  }
+  return connection()
+    .then((db) => db.collection('produtos').find().toArray())
+    .then((r) => r)
+    .catch((err) => err);
 };
 
 const getById = async (id) => {
-  try {
-    const [result] = await connection.query(
-      'SELECT * FROM products WHERE id = ?',
-      [id]
-    );
-    if (!result.length) return null;
-    return result[0];
-  } catch (err) {
-    console.error(err);
-    return process.exit(1);
-  }
+  return connection()
+    .then((db) => db.collection('produtos').findOne({ _id: ObjectID(id) }))
+    .then((r) => r)
+    .catch((err) => err);
 };
 
 const update = async (id, name, brand) => {
-  try {
-    await connection.query(
-      'UPDATE products SET name = ?, brand = ? WHERE id = ?',
-      [name, brand, id]
-    );
-  } catch (err) {
-    console.error(err);
-    return process.exit(1);
-  }
+  return connection()
+    .then((db) =>
+      db
+        .collection('produtos')
+        .updateOne({ _id: ObjectID(id) }, { $set: { name, brand } })
+    )
+    .then(() => ({ id: ObjectID(id), name, brand }))
+    .catch((err) => err);
 };
 
 const exclude = async (id) => {
-  try {
-    const product = await getById(id);
-    if (!product) return {};
-    await connection.query('DELETE FROM products WHERE id = ?', [id]);
-    return product;
-  } catch (err) {
-    console.error(err);
-    return process.exit(1);
-  }
+  return connection()
+    .then((db) => db.collection('produtos').deleteOne({ _id: ObjectID(id) }))
+    .then((r) => r)
+    .catch((err) => err);
 };
 
 module.exports = { add, getAll, getById, update, exclude };
