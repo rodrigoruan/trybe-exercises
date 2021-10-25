@@ -63,6 +63,8 @@ app.post('/multiple', upload.array('files'), (req, res) => {
   ]);
 });
 
+app.post('/profile')
+
 app.use(middlewares.error);
 
 app.listen(PORT, () => {
