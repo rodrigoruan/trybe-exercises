@@ -55,7 +55,12 @@ app.post('/upload', upload.single('arquivo'), (req, res) => {
 });
 
 app.post('/multiple', upload.array('files'), (req, res) => {
-  res.status(200).json({ body: req.body, file: req.file });
+  res.status(200).json([
+    ...req.files.map(({ originalname, path }) => ({
+      file: originalname,
+      url: path,
+    })),
+  ]);
 });
 
 app.use(middlewares.error);
