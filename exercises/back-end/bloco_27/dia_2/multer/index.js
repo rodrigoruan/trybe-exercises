@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const { PORT } = process.env;
+const PORT = 3000;
 
 const controllers = require('./controllers');
 const middlewares = require('./middlewares');
@@ -15,7 +15,7 @@ app.use(
     origin: `http://localhost:${PORT}`,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Authorization'],
-  }),
+  })
 );
 
 app.use(bodyParser.json());
