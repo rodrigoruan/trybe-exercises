@@ -28,7 +28,15 @@ app.use(
   })
 );
 
-const upload = multer({ storage });
+const upload = multer({
+  storage,
+  fileFilter: (_req, file, callback) => {
+    if (!file.originalname.endsWith('.png')) {
+      return callback(new Error('Extension must be `png`'));
+    }
+    callback(null, true);
+  },
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
