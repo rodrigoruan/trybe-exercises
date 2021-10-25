@@ -76,6 +76,23 @@ app.post(
   }
 );
 
+app.get('/profiles/:id', (req, res) => {
+  const { id } = req.params;
+
+  const files = JSON.parse(fs.readFileSync('./profilePics/profile.json'));
+  const profile = files.find((prof) => prof.id === Number(id));
+
+  if (!profile) {
+    return res.status(404).json({
+      error: {
+        message: 'Perfil não encontrado',
+      },
+    });
+  }
+
+  res.status(200).json({ profile });
+});
+
 app.use(middlewares.error);
 
 app.listen(PORT, () => {
