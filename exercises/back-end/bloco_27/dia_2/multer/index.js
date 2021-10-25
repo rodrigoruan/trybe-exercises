@@ -7,7 +7,6 @@ const fs = require('fs');
 
 const PORT = 3000;
 
-const controllers = require('./controllers');
 const middlewares = require('./middlewares');
 
 const app = express();
@@ -48,8 +47,6 @@ const upload = multer({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/ping', controllers.ping);
-
 app.post('/upload', upload.single('arquivo'), (req, res) => {
   res.status(200).json({ body: req.body, file: req.file });
 });
@@ -63,7 +60,21 @@ app.post('/multiple', upload.array('files'), (req, res) => {
   ]);
 });
 
-app.post('/profile')
+app.post(
+  '/profile',
+  multer({ dest: 'profilePics' }).single('profilePic'),
+  (req, res) => {
+    const { name, email, password, bio } = req.body;
+
+    const PATH = `./profilePics/profile.json`;
+
+    const files = JSON.parse(fs.readFileSync(PATH));
+    files.push({ id: req.file.filename, name, email, password, bio });
+    fs.writeFileSync(PATH, JSON.stringify(files));
+
+    res.status(200).json({ files });
+  }
+);
 
 app.use(middlewares.error);
 
