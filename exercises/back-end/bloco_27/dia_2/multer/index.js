@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const multer = require('multer');
+const fs = require('fs');
 
 const PORT = 3000;
 
@@ -34,6 +35,12 @@ const upload = multer({
     if (!file.originalname.endsWith('.png')) {
       return callback(new Error('Extension must be `png`'));
     }
+
+    const files = fs.readdirSync('./uploads');
+    if (files.some((f) => f.endsWith(file.originalname))) {
+      return callback(new Error('File already exists'));
+    }
+
     callback(null, true);
   },
 });
