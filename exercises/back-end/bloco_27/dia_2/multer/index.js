@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const multer = require('multer');
 
 const PORT = 3000;
 
@@ -18,10 +19,14 @@ app.use(
   })
 );
 
+const upload = multer({ dest: 'uploads/' });
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/ping', controllers.ping);
+
+app.post('/upload', (req, res) => res.send(req.body, req.file));
 
 app.use(middlewares.error);
 
