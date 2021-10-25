@@ -54,6 +54,8 @@ app.post('/upload', upload.single('arquivo'), (req, res) => {
   res.status(200).json({ body: req.body, file: req.file });
 });
 
+app.post('/multiple', upload.array('files'), (req, res) => {});
+
 app.use(middlewares.error);
 
 app.listen(PORT, () => {
