@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/ping', controllers.ping);
 
 app.post('/upload', upload.single('arquivo'), (req, res) => {
-  res.send(req.body, req.file);
+  res.status(200).json({ body: req.body, file: req.file });
 });
 
 app.use(middlewares.error);
