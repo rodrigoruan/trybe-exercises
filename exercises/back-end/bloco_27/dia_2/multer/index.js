@@ -11,6 +11,15 @@ const middlewares = require('./middlewares');
 
 const app = express();
 
+const storage = multer.diskStorage({
+  destination: (_req, _file, callback) => {
+    callback(null, 'uploads/');
+  },
+  filename: (_req, file, callback) => {
+    callback(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+
 app.use(
   cors({
     origin: `http://localhost:${PORT}`,
@@ -19,7 +28,7 @@ app.use(
   })
 );
 
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ storage });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
