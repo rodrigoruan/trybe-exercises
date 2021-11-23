@@ -7,7 +7,7 @@ const findById = (id) =>
   connection().then((db) => db.collection('plants').findOne({ id }));
 
 const deleteById = (id) =>
-  connection().then((db) => db.collection('plants').deleteOne({ id }));
+  connection().then((db) => db.collection('plants').deleteOne({ id: id }));
 
 const updateById = (id, plant) =>
   connection().then((db) =>
