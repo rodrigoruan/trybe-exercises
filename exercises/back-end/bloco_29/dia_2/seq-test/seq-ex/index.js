@@ -37,6 +37,34 @@ app.post('/', async (req, res) => {
   }
 });
 
+app.post('/:id', async (req, res) => {
+  try {
+    const { title, author, pageQuantity } = req.body;
+    const { id } = req.params;
+
+    const [updatedBook] = await Book.update(
+      { title, author, pageQuantity },
+      { where: { id } }
+    );
+
+    res.status(200).json(updatedBook);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+app.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    await Book.destroy({ where: { id } });
+
+    res.status(200).json({ message: 'Livro excluido com sucesso!' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 const PORT = 3000;
 
 app.listen(PORT, () => {
