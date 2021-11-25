@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { Book } = require('./models');
+const { Book } = require('./src/models');
 
 const app = express();
 
