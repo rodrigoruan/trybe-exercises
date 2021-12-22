@@ -194,44 +194,44 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 ##### Bloco 27: NodeJS
 
 - [x] 27-1: _Express: HTTP com Node.js_
-- [ ] 27-2: _Arquitetura de Software - Introdução ao MVC_
-- [ ] 27-3: _[Projeto - Cookmaster]()_
+- [x] 27-2: _Arquitetura de Software - Introdução ao MVC_
+- [x] 27-3: _[Projeto - Cookmaster]()_
 
 ##### Bloco 28: NodeJS
 
-- [ ] 28-1: _Arquitetura de Software - Camada de Serviço_
-- [ ] 28-2: _Arquitetura web - Rest e Restful_
-- [ ] 28-3: _[Projeto - Store Manager]()_
+- [x] 28-1: _Arquitetura de Software - Camada de Serviço_
+- [x] 28-2: _Arquitetura web - Rest e Restful_
+- [x] 28-3: _[Projeto - Store Manager]()_
 
 ##### Bloco 29: NodeJS
 
-- [ ] 29-1: _NodeJS - JWT - (JSON Web Token)_
-- [ ] 29-2: _NodeJS - Upload de arquivos com Multer_
-- [ ] 29-3: _[Projeto - Cookmaster V2]()_
+- [x] 29-1: _NodeJS - JWT - (JSON Web Token)_
+- [x] 29-2: _NodeJS - Upload de arquivos com Multer_
+- [x] 29-3: _[Projeto - Cookmaster V2]()_
 
 ##### Bloco 30: Introdução - Deploy
 
-- [ ] 30-1: _Infraestrutura - Deploy com Heroku_
-- [ ] 30-2: _Deploy - Gerenciadores de Processos_
-- [ ] 30-3: _[Projeto - Stranger Things]()_
+- [x] 30-1: _Infraestrutura - Deploy com Heroku_
+- [x] 30-2: _Deploy - Gerenciadores de Processos_
+- [x] 30-3: _[Projeto - Stranger Things]()_
 
 ##### Bloco 31: Projeto
 
-- [ ] 31-1: _[Projeto - Trybeer]()_
+- [x] 31-1: _[Projeto - Trybeer]()_
 
 ##### Bloco 32: Arquitetura de Software
 
-- [ ] 32-1: _Arquitetura - Princípios SOLID_
-- [ ] 32-2: _ORM - Interface da aplicação com o banco de dados_
-- [ ] 32-3: _Arquitetura de Software - DDD_
-- [ ] 32-4: _Boas práticas na escrita de testes_
-- [ ] 32-3: _[Projeto - API de Blogs]()_
+- [x] 32-1: _Arquitetura - Princípios SOLID_
+- [x] 32-2: _ORM - Interface da aplicação com o banco de dados_
+- [x] 32-3: _Arquitetura de Software - DDD_
+- [x] 32-4: _Boas práticas na escrita de testes_
+- [x] 32-3: _[Projeto - API de Blogs]()_
 
 ##### Bloco 33: Sockets
 
-- [ ] 30-1: _Sockets - TCP/UDP & NET_
-- [ ] 30-2: _Sockets - Socket.io_
-- [ ] 30-3: _[Projeto - Webchat]()_
+- [x] 30-1: _Sockets - TCP/UDP & NET_
+- [x] 30-2: _Sockets - Socket.io_
+- [x] 30-3: _[Projeto - Webchat]()_
 
 ##### Bloco 34: Projeto
 
