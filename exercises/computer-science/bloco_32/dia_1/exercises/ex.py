@@ -15,4 +15,14 @@ def print_squares(number):
     copy_num -= 1
     print('*' * number)
 
+def highest_length_name(names):
+  highest_name = ""
+  highest_length = 0
+  for name in names:
+    length = len(name)
+    if(length > highest_length):
+      highest_name = name
+      highest_length = length
+  return highest_name
 
+print(highest_length_name(['joao', 'carlos']))
