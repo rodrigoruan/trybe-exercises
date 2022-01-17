@@ -33,4 +33,12 @@ def calculate_amount_of_paint(area):
     total += 1
   return (total, total * 80.00)
   
-print(calculate_amount_of_paint(1000))
+def type_of_triangle(a, b, c):
+  if a == b == c:
+    return "Triangulo Equilatero"
+  elif a == b or a == c or b == c:
+    return "Triangulo Isosceles"
+  else:
+    return "Triangulo Escaleno"
+
+print(type_of_triangle(10, 32, 3))
