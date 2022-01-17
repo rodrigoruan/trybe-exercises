@@ -12,3 +12,19 @@ test_set = set()
 test_set.add('Rodrigo')
 
 print(test_set)
+
+info = {
+  "personagem": "Margarida",
+  "origem": "Pato Donald",
+  "nota": "Namorada do personagem principal nos quadrinhos do Pato Donald",
+}
+
+# print(info.origem)
+
+info["recorrente"] = "Sim"
+
+print(info)
+
+del info["origem"]
+
+print(info)
