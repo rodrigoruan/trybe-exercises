@@ -9,4 +9,10 @@ def arithmetic_mean(numbers):
     total += 1
   return sum / total
 
-print(arithmetic_mean([1,2,3]))
+def print_squares(number):
+  copy_num = number
+  while copy_num > 0:
+    copy_num -= 1
+    print('*' * number)
+
+
