@@ -17,4 +17,3 @@ firstCover = 3.00
 nextCovers = 0.75
 
 print(priceWithDiscount * 60 + firstCover + (nextCovers * 59))
-
