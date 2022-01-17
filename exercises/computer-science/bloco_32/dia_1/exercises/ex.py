@@ -25,4 +25,12 @@ def highest_length_name(names):
       highest_length = length
   return highest_name
 
-print(highest_length_name(['joao', 'carlos']))
+def calculate_amount_of_paint(area):
+  total_paint = area / 3
+  total = 0
+  while(total_paint > 0):
+    total_paint -= 18
+    total += 1
+  return (total, total * 80.00)
+  
+print(calculate_amount_of_paint(1000))
