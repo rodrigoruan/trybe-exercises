@@ -11,3 +11,10 @@ print(hours, minutes, seconds)
 
 print('Hello World!');
 
+price = 24.20
+priceWithDiscount = price - (price / 100) * 40
+firstCover = 3.00
+nextCovers = 0.75
+
+print(priceWithDiscount * 60 + firstCover + (nextCovers * 59))
+
