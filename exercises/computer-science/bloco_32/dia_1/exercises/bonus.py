@@ -6,4 +6,7 @@ def print_triangle(n):
   for i in range(n, 0, -1):
     print('*' * (n - i))
 
-print(print_triangle(6))
+def sum_up_to(n):
+  return n * (n + 1) / 2
+
+print(sum_up_to(5))
