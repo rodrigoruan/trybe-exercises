@@ -9,5 +9,3 @@ with open("students.txt", mode="r") as file:
       reprovedStudents.append((f"{student} {score}"))
   
   print(reprovedStudents)
-
-  file.close()
